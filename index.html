@@ -971,7 +971,7 @@ function dflex_demo_page_attachments(&$page) {
       function createAsides(event) {
         $('.caption').each(function (i, e) {
           var text = $(this).text();
-          //$(this).replaceWith("<aside class='notes'>" + text + "</aside>");
+          $(this).replaceWith("<aside class='notes'>" + text + "</aside>");
         });
       }
 		</script>
