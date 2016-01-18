@@ -59,18 +59,239 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
         <section>
-          <h1>The Flexibility of Drupal</h1>
-          <h2>9 Ways to Alter a Menu Item</h2>
-          <h3><a href="http://www.drupalnights.org/events/2015/michael-miles-flexibility-drupal" target="_blank">drupalnights.org/events/2015/michael-miles-flexibility-drupal</a></h3>
-          <h3>BioRAFT Drupal Nights</h3>
+          <section data-transition="convex">
+            <h1>The Flexibility of Drupal</h1>
+            <h3><a href="http://www.drupalnights.org/events/2015/michael-miles-flexibility-drupal" target="_blank">drupalnights.org/events/2015/michael-miles-flexibility-drupal</a></h3>
+            <h3>BioRAFT Drupal Nights</h3>
+          </section>
+          <section data-transition="convex">
+              <h1>Michael Miles</h1>
+              <p class="fragment">
+                <strong>From: </strong>Boston, MA USA
+              </p>
+              <p class="fragment">
+                <strong>Work: </strong>
+                <a href="http://wearegenuine.com" target="_blank">Genuine</a>
+                  <span style="font-size:70%"> @WeAreGenuine(.com)</span>
+              </p>
+              <p class="fragment">
+                <strong>Exp:</strong> Working with Drupal since 2008.<br />
+              </p>
+              <p>
+                <span class="fragment step-note" style="font-size:70%">Acquia Grand Master. Acquia MVP.</span>
+              </p>
+              <br />
+              <p>
+                <span class="fragment"><strong>Twitter:</strong> @mikemiles86</span>
+                <span class="fragment"><strong>Drupal.org:</strong> mikemiles86</span>
+                <br />
+                <span class="fragment"><strong>All the Places:</strong> mikemiles86</span>
+              </p>
+              <aside class="notes">
+                <ul>
+                  <li>Genuine - full service digital agency.</li>
+                  <li>Specialize in Brand engagments, SEO, UX, Design, Video, Development.</li>
+                  <li>Home Office in Boston. Offices in NYC, SF, Chicago.</li>
+                </ul>
+              </aside>
+          </section>
         </section>
         <section>
-          <h1>Feedback</h1>
-          <h3><a href="http://www.twitter.com/mikemiles86">@mikemiles86</a></h3>
+          <section data-transition="convex">
+            <h1>Goals of this Session</h1>
+            <p>
+                <ul>
+                  <li class="fragment step-note">There is no "right" way, just "right for me" way.</li>
+                  <li class="fragment step-note">There are many data manipulation methods.</li>
+                  <li class="fragment step-note">The considerations to take into account.</li>
+                </ul>
+            </p>
+          </section>
+          <section data-transition="convex">
+            <h1>Focus of this Session</h1>
+            <p>
+              <ul>
+                <li class="fragment step-note">Changing title, destination & display of menu tabs.</li>
+                <li class="fragment step-note">8 methods of manipulation.</li>
+                <li class="fragment step-note">Non-developer, front-end, back-end skillsets.</li>
+              </ul>
+            </p>
+          </section>
+          <section data-transition="convex">
+            <h1>Session Environment</h1>
+            <p>
+              <ul>
+                <li class="fragment step-note">A standard Drupal 8.0.1 install.</li>
+                <li class="fragment step-note">Bartik sub-theme with Slate color.</li>
+                <li class="fragment step-note">Not live. (blame Murphy).</li>
+              </ul>
+            </p>
+          </section>
+          <section data-transition="convex">
+            <h2 class="filename">Before</h2>
+            <img data-src="images/env_d8_before.png" class="screenshot" alt="A standard Drupal 8.0.1 site install with 8 menu tabs." />
+          </section>
+          <section data-transition="convex">
+            <h2 class="filename">After</h2>
+            <img data-src="images/env_d8_after.png" class="screenshot" alt="A standard Drupal 8.0.1 site install with 8 menu tabs. After data manipulation." />
+          </section>
         </section>
         <section>
-          <h1>Thank You!</h1>
-          <p>Questions?</p>
+          <section>
+            <h1>#1. Core UI</h1>
+            <ul>
+              <li class="fragment list-header">Pros</li>
+              <li class="fragment step-note">"Easy" to use.</li>
+              <li class="fragment step-note">No dev skills needed.</li>
+              <li class="fragment step-note">Changes are quick.</li>
+            </ul>
+            <ul>
+              <li class="fragment list-header">Cons</li>
+              <li class="fragment step-note">Limited capabilities.</li>
+              <li class="fragment step-note">Options too broad.</li>
+              <li class="fragment step-note">Options too narrow.</li>
+            </ul>
+            <p class="fragment tldr"><strong>tl;dr</strong> Out of the box functionality.</p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h1>#2. Modules</h1>
+            <ul>
+              <li class="fragment list-header">Pros</li>
+              <li class="fragment step-note">Extends Drupal core.</li>
+              <li class="fragment step-note">Many options available.</li>
+              <li class="fragment step-note">None exist? Build your own.</li>
+            </ul>
+            <ul>
+              <li class="fragment list-header">Cons</li>
+              <li class="fragment step-note">Added complexity.</li>
+              <li class="fragment step-note">May do more then needed.</li>
+              <li class="fragment step-note">Potential Security issues.</li>
+            </ul>
+            <p class="fragment tldr"><strong>tl;dr</strong> Extend Drupal core.</p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h1>#3. Theming</h1>
+            <ul>
+              <li class="fragment list-header">Pros</li>
+              <li class="fragment step-note">Replace Drupal templates.</li>
+              <li class="fragment step-note">Hardcode or use Twig logic.</li>
+              <li class="fragment step-note">Changes are cached.</li>
+            </ul>
+            <ul>
+              <li class="fragment list-header">Cons</li>
+              <li class="fragment step-note">Templates may be wrong level.</li>
+              <li class="fragment step-note">Not everything is templated.</li>
+              <li class="fragment step-note">May require server side code.</li>
+            </ul>
+            <p class="fragment tldr"><strong>tl;dr</strong> Control rendered HTML.</p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h1>#4. Custom CSS</h1>
+            <ul>
+              <li class="fragment list-header">Pros</li>
+              <li class="fragment step-note">Control of display.</li>
+              <li class="fragment step-note">Target specific elements.</li>
+              <li class="fragment step-note">Can be scripted with SASS.</li>
+            </ul>
+            <ul>
+              <li class="fragment list-header">Cons</li>
+              <li class="fragment step-note">Can only change display.</li>
+              <li class="fragment step-note">Complex element chains.</li>
+              <li class="fragment step-note">??</li>
+            </ul>
+            <p class="fragment tldr"><strong>tl;dr</strong> Position, size and color.</p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h1>#5. JavaScript</h1>
+            <ul>
+              <li class="fragment list-header">Pros</li>
+              <li class="fragment step-note">Manipulate any DOM item.</li>
+              <li class="fragment step-note">Can be based on actions.</li>
+              <li class="fragment step-note">Less server processing.</li>
+            </ul>
+            <ul>
+              <li class="fragment list-header">Cons</li>
+              <li class="fragment step-note">Browser dependencies.</li>
+              <li class="fragment step-note">Delay before execution.</li>
+              <li class="fragment step-note">Alterable by client.</li>
+            </ul>
+            <p class="fragment tldr"><strong>tl;dr</strong> Client controlled functionality.</p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h1>#6. Hooks</h1>
+            <ul>
+              <li class="fragment list-header">Pros</li>
+              <li class="fragment step-note">Provided by core and modules.</li>
+              <li class="fragment step-note">Use in custom theme or module.</li>
+              <li class="fragment step-note">Easiest way to extend core.</li>
+            </ul>
+            <ul>
+              <li class="fragment list-header">Cons</li>
+              <li class="fragment step-note">Not used everywhere.</li>
+              <li class="fragment step-note">May be wrong level.</li>
+              <li class="fragment step-note">May have wrong timing.</li>
+            </ul>
+            <p class="fragment tldr"><strong>tl;dr</strong> Core manipulation functions.</p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h1>#7. Services</h1>
+            <ul>
+              <li class="fragment list-header">Pros</li>
+              <li class="fragment step-note">Can alter core functionality.</li>
+              <li class="fragment step-note">Can replace core functionality.</li>
+              <li class="fragment step-note">??</li>
+            </ul>
+            <ul>
+              <li class="fragment list-header">Cons</li>
+              <li class="fragment step-note">Replacing/altering a global task.</li>
+              <li class="fragment step-note">Can be complex.</li>
+              <li class="fragment step-note">Not used for everything.</li>
+            </ul>
+            <p class="fragment tldr"><strong>tl;dr</strong> Cool way to "hack" Drupal core.</p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h1>#8. Event Listners</h1>
+            <ul>
+              <li class="fragment list-header">Pros</li>
+              <li class="fragment step-note">Respond to specific actions.</li>
+              <li class="fragment step-note">??</li>
+              <li class="fragment step-note">??</li>
+            </ul>
+            <ul>
+              <li class="fragment list-header">Cons</li>
+              <li class="fragment step-note">Can be complex.</li>
+              <li class="fragment step-note">Not everything triggers an event.</li>
+              <li class="fragment step-note">??</li>
+            </ul>
+            <p class="fragment tldr"><strong>tl;dr</strong>  ??</p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h1>Slides & Notes</h1>
+          </section>
+          <section>
+            <h1>Feedback</h1>
+            <h3><a href="http://www.twitter.com/mikemiles86">@mikemiles86</a></h3>
+          </section>
+          <section>
+            <h1>Thank You!</h1>
+            <p>Questions?</p>
+          </section>
         </section>
 			</div>
 

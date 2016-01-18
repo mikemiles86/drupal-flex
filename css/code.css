@@ -37,6 +37,11 @@ pre span.codename {
   padding: 5px !important;
 }
 
+.tldr strong {
+  color: #fff;
+}
+
+
 .caption, .filename {
   padding: 0 !important;
   margin: 0 !important;
