@@ -153,6 +153,12 @@
             </ul>
             <p class="fragment tldr"><strong>tl;dr</strong> Out of the box functionality.</p>
           </section>
+          <section data-transition="convex">
+            <img data-src="images/manipulation_core_ui.gif" class="screenshot animated-gif" alt="Using Drupal core admin UI to change the title and destination of a menu tab." />
+          </section>
+          <section data-transition="convex">
+            <img data-src="images/manipulation_core_ui_result.png" class="screenshot" alt="Result of using the Drupal core admin UI to change menu table title and destination." />
+          </section>
         </section>
         <section>
           <section>
@@ -171,10 +177,16 @@
             </ul>
             <p class="fragment tldr"><strong>tl;dr</strong> Extend Drupal core.</p>
           </section>
+          <section data-transition="convex">
+            <img data-src="images/manipulation_modules.gif" class="screenshot animated-gif" alt="Using a Drupal contrib module to change the styling and target of a menu tab." />
+          </section>
+          <section data-transition="convex">
+            <img data-src="images/manipulation_modules_result.png" class="screenshot" alt="Result of using a Drupal contrib module to change the styling and target of a menu tab." />
+          </section>
         </section>
         <section>
           <section>
-            <h1>#3. Theming</h1>
+            <h1>#3. Templates</h1>
             <ul>
               <li class="fragment list-header">Pros</li>
               <li class="fragment step-note">Replace Drupal templates.</li>
@@ -188,6 +200,107 @@
               <li class="fragment step-note">May require server side code.</li>
             </ul>
             <p class="fragment tldr"><strong>tl;dr</strong> Control rendered HTML.</p>
+          </section>
+          <section data-transition="convex">
+            <img data-src="images/manipulations_templates.png" class="screenshot" alt="Menu tab to be manipulated by using a custom template and twig." />
+          </section>
+          <section data-transition="convex">
+            <pre><code class="html line-numbers" data-trim>
+              &lt;!-- THEME DEBUG -->
+&lt;!-- THEME HOOK: 'menu__main' -->
+&lt;!-- FILE NAME SUGGESTIONS:
+   * menu--main.html.twig
+   x menu.html.twig
+-->
+&lt;!-- BEGIN OUTPUT from 'core/themes/classy/templates/navigation/menu.html.twig' -->
+&lt;ul class="clearfix menu">
+&lt;!-- // ... -->
+  &lt;li class="menu-item menu-item--active-trail">
+    &lt;a href="/node/3" data-drupal-link-system-path="node/3" class="is-active">Templates&lt;/a>
+  &lt;/li>
+&lt;!-- // ... -->
+&lt;/ul>
+&lt;!-- END OUTPUT from 'core/themes/classy/templates/navigation/menu.html.twig' -->
+            </code></pre>
+          </section>
+          <section data-transition="convex">
+            <h2 class="filename">core/themes/classy/templates/navigation/menu.html.twig</h2>
+            <pre><code class="twig line-numbers" data-trim>
+              {% import _self as menus %}
+{{ menus.menu_links(items, attributes, 0) }}
+{% macro menu_links(items, attributes, menu_level) %}
+  {% import _self as menus %}
+  {% if items %}
+    {% if menu_level == 0 %}
+      &lt;ul{{ attributes.addClass('menu') }}>
+    {% else %}
+      &lt;ul class="menu">
+    {% endif %}
+    {% for item in items %}
+      {# ... #}
+      &lt;li{{ item.attributes.addClass(classes) }}>
+        {{ link(item.title, item.url) }}
+        {% if item.below %}
+          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+        {% endif %}
+      &lt;/li>
+    {% endfor %}
+    &lt;/ul>
+  {% endif %}
+{% endmacro %}
+            </code></pre>
+          </section>
+          <section data-transition="convex">
+            <img data-src="images/manipulation_templates_theme_files.png" class="screenshot" alt="Copy and rename the default menu.html.twig file as menu--main.html.twig in custom sub theme templates/ directry." />
+          </section>
+           <section data-transition="convex">
+            <h2 class="filename">themes/SubBartik/templates/menu--main.html.twig</h2>
+            <pre><code class="twig line-numbers" data-trim>
+{% macro menu_links(items, attributes, menu_level) %}
+{# ... #}
+{% for item in items %}
+  {# ... #}
+  &lt;li{{ item.attributes.addClass(classes) }}>
+    {% if item.title == 'Templates' %}
+      &lt;a href="node/9" style="color:#F00;background:#0F0">TEMPLATES ALT&lt;/a>
+    {% else %}
+      {{ link(item.title, item.url) }}
+    {% endif %}
+    {% if item.below %}
+      {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+    {% endif %}
+  &lt;/li>
+{% endfor %}
+{# ... #}
+{% endmacro %}
+            </code></pre>
+          </section>
+          <section data-transition="convex">
+            <h2 class="filename">themes/SubBartik/templates/menu--main.html.twig</h2>
+            <pre><code class="twig line-numbers" data-trim>
+{% macro menu_links(items, attributes, menu_level) %}
+{# ... #}
+{% for item in items %}
+  {% //... %}
+  &lt;li{{ item.attributes.addClass(classes) }}>
+    {%  if item.title|lower == 'templates'|t %}
+      {% set alt_url = url('entity.node.canonical', {'node' : '9'}) %}
+      {% set alt_title = (item.title ~ ' alt') | upper %}
+      &lt;a href="{{ alt_url }}" style="color:#F00;background:#0F0;">{{ alt_title }}&lt;/a>
+    {% else %}
+      {{ link(item.title, item.url) }}
+    {% endif %}
+    {% if item.below %}
+      {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+    {% endif %}
+  &lt;/li>
+{% endfor %}
+{# ... #}
+{% endmacro %}
+            </code></pre>
+          </section>
+          <section data-transition="convex">
+            <img data-src="images/manipulation_templates_result.png" class="screenshot" alt="Result of using twig logic a template override in a custom theme to alter a menu tab." />
           </section>
         </section>
         <section>
@@ -210,7 +323,7 @@
         </section>
         <section>
           <section>
-            <h1>#5. JavaScript</h1>
+            <h1>#5. Custom JavaScript</h1>
             <ul>
               <li class="fragment list-header">Pros</li>
               <li class="fragment step-note">Manipulate any DOM item.</li>
@@ -264,20 +377,20 @@
         </section>
         <section>
           <section>
-            <h1>#8. Event Listners</h1>
+            <h1>#8. Combinations</h1>
             <ul>
               <li class="fragment list-header">Pros</li>
-              <li class="fragment step-note">Respond to specific actions.</li>
-              <li class="fragment step-note">??</li>
+              <li class="fragment step-note">Most control over Drupal.</li>
+              <li class="fragment step-note">Methods based on needs.</li>
               <li class="fragment step-note">??</li>
             </ul>
             <ul>
               <li class="fragment list-header">Cons</li>
-              <li class="fragment step-note">Can be complex.</li>
-              <li class="fragment step-note">Not everything triggers an event.</li>
+              <li class="fragment step-note">Requires multiple skillsets.</li>
+              <li class="fragment step-note">Harder to debug.</li>
               <li class="fragment step-note">??</li>
             </ul>
-            <p class="fragment tldr"><strong>tl;dr</strong>  ??</p>
+            <p class="fragment tldr"><strong>tl;dr</strong> Real world situations.</p>
           </section>
         </section>
         <section>
