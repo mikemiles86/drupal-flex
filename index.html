@@ -205,6 +205,21 @@
             <img data-src="images/manipulations_templates.png" class="screenshot" alt="Menu tab to be manipulated by using a custom template and twig." />
           </section>
           <section data-transition="convex">
+            <h2 class="filename">sites\default\development.services.yml</h2>
+            <pre><code class="yml line-numbers" data-trim>
+              # Local development services.
+#
+# To activate this feature, follow the instructions at the top of the
+# 'example.settings.local.php' file, which sits next to this file.
+parameters:
+  twig.config:
+    debug: true
+            </code></pre>
+          </section>
+          <section data-transition="convex">
+            <img data-src="images/manipulation_templates_inspect.gif" class="screenshot animated-gif" alt="Inspecting an element with Twig debugging enabled." />
+          </section>
+          <section data-transition="convex">
             <pre><code class="html line-numbers" data-trim>
               &lt;!-- THEME DEBUG -->
 &lt;!-- THEME HOOK: 'menu__main' -->
@@ -300,6 +315,9 @@
             </code></pre>
           </section>
           <section data-transition="convex">
+            <img data-src="images/manipulation_templates_rebuild_cache.gif" class="screenshot animated-gif" alt="Rebuilding the Drupal cache to use the new template file." />
+          </section>
+          <section data-transition="convex">
             <img data-src="images/manipulation_templates_result.png" class="screenshot" alt="Result of using twig logic a template override in a custom theme to alter a menu tab." />
           </section>
         </section>
@@ -310,7 +328,7 @@
               <li class="fragment list-header">Pros</li>
               <li class="fragment step-note">Control of display.</li>
               <li class="fragment step-note">Target specific elements.</li>
-              <li class="fragment step-note">Can be scripted with SASS.</li>
+              <li class="fragment step-note">Can be added by theme or module.</li>
             </ul>
             <ul>
               <li class="fragment list-header">Cons</li>
@@ -319,6 +337,88 @@
               <li class="fragment step-note">??</li>
             </ul>
             <p class="fragment tldr"><strong>tl;dr</strong> Position, size and color.</p>
+          </section>
+          <section data-transition="convex">
+            <img data-src="images/manipulation_css.png" class="screenshot" alt="Menu tab to be manipulated by using custom css." />
+          </section>
+          <section data-transition="convex">
+            <h2 class="filename">themes/SubBartik/subbartik.libraries.yml</h2>
+            <pre><code class="yml line-numbers" data-trim>
+              menu-alter:
+  version: VERSION
+  css:
+    theme:
+      css/menu_alter.css: {}
+            </code></pre>
+          </section>
+          <section data-transition="convex">
+            <h2 class="filename">themes/SubBartik/css/menu_alter.css</h2>
+            <pre><code class="css line-numbers" data-trim>
+              .menu--main .menu li a[data-drupal-link-system-path="node/4"] {
+  background: #0000FF;
+}
+            </code></pre>
+          </section>
+          <section data-transition="convex">
+            <h2 class="filename">themes/SubBartik/subbartik.info.yml</h2>
+            <pre><code class="yml line-numbers" data-trim>
+              name: Sub Bartik
+type: theme
+base theme: bartik
+description: 'A sub-theme of Bartik'
+version: VERSION
+core: 8.x
+libraries:
+  - subbartik/menu-alter
+            </code></pre>
+          </section>
+          <section data-transition="convex">
+            <img data-src="images/manipulation_css_global.png" class="screenshot" alt="Background color of menu tab changed by adding a css file using a library in a custom theme." />
+          </section>
+          <section data-transition="convex">
+            <h2 class="filename">themes/SubBartik/subbartik.info.yml</h2>
+            <pre><code class="yml line-numbers" data-trim>
+              menu-alter:
+  version: VERSION
+  css:
+    theme:
+      css/menu_alter.css: {}
+menu-alter-main:
+  version: VERSION
+  css:
+    theme:
+      css/menu_alter_main.css: {}
+            </code></pre>
+          </section>
+          <section data-transition="convex">
+            <h2 class="filename">themes/SubBartik/css/menu_alter_main.css</h2>
+            <pre><code class="css line-numbers" data-trim>
+              .menu--main .menu li:nth-child(4) a {
+  color: #FFF;
+}
+            </code></pre>
+          </section>
+          <section data-transition="convex">
+            <h2 class="filename">themes/SubBartik/templates/menu--main.html.twig</h2>
+            <pre><code class="twig line-numbers" data-trim>
+{{ attach_library('subbartik/menu-alter-text') }}
+{% import _self as menus %}
+{{ menus.menu_links(items, attributes, 0) }}
+{% macro menu_links(items, attributes, menu_level) %}
+  {% import _self as menus %}
+  {% if items %}
+    {% if menu_level == 0 %}
+      &lt;ul{{ attributes.addClass('menu') }}>
+    {% else %}
+      &lt;ul class="menu">
+    {% endif %}
+    {% for item in items %}
+      {# ... #}
+            </code></pre>
+          </section>
+          <section data-transition="convex">
+              <img data-src="images/manipulation_css_result.png" class="screenshot" alt="Result of changing a menu tab by using custom CSS attached as libraries." />
+          </section>
           </section>
         </section>
         <section>
@@ -338,6 +438,75 @@
             </ul>
             <p class="fragment tldr"><strong>tl;dr</strong> Client controlled functionality.</p>
           </section>
+          <section data-transition="convex">
+            <img data-src="images/manipulation_js.png" class="screenshot" alt="Menu tab to be manipulated by using custom javascript." />
+          </section>
+          <section data-transition="convex">
+            <img data-src="images/manipulation_js_module.png" class="screenshot" alt="Custom module to manipulate a menu tab." />
+          </section>
+          <section data-transition="convex">
+            <h2 class="filename">modules/drupalflex/drupalflex.libraries.yml</h2>
+            <pre><code class="yml line-numbers" data-trim>
+menu-alter:
+  css:
+    theme:
+      css/menu_alter.css: {}
+  js:
+    js/menu_alter.js: {}
+  dependencies:
+     - core/jquery
+     - core/jquery.once
+     - core/drupal
+            </code></pre>
+          </section>
+          <section data-transition="convex">
+            <h2 class="filename">modules/drupalflex/js/menu_alter.js</h2>
+            <pre><code class="js line-numbers" data-trim>
+              (function ($, Drupal) {
+  "use strict";
+  Drupal.behaviors.drupalFlexMenuAlter = {
+    attach: function (context) {
+      $('.menu--main ul.menu li a').each(function(){
+        if ($(this).attr('href') == '/node/5') {
+          $(this).addClass('yellow-menu');
+          $(this).attr('style', 'color:#000;');
+          $(this).attr('target', '_blank');
+          $(this).attr('href', '/node/9');
+          $(this).text($(this).text() + Drupal.t(' Alt'));
+        }
+      });
+    }
+  }
+})(jQuery, Drupal);
+            </code></pre>
+          </section>
+          <section data-transition="convex">
+            <h2 class="filename">modules/drupalflex/css/menu_alter.css</h2>
+            <pre><code class="css line-numbers" data-trim>
+          .yellow-menu {
+  background-color: #FF0;
+}
+            </code></pre>
+          </section>
+          <section data-transition="convex">
+            <h2 class="filename">modules/drupalflex/drupalflex.module</h2>
+            <pre><code class="php line-numbers" data-trim>
+              &lt;?php
+
+/**
+ * Implements hook_page_attachments().
+ */
+function drupalflex_page_attachments(array &$attachments) {
+  $attachments['#attached']['library'][] = 'drupalflex/menu-alter';
+}
+            </code></pre>
+          </section>
+          <section data-transition="convex">
+            <img data-src="images/manipulation_js.gif" class="screenshot animated-gif" alt="Enabling a custom module to allow custom javascript/cs to manipulate menu tab." />
+          </section>
+          <section data-transition="convex">
+            <img data-src="images/manipulation_js_result.png" class="screenshot" alt="Result of using custom javascript to manipulate a menu tab." />
+          </section>
         </section>
         <section>
           <section>
@@ -355,6 +524,98 @@
               <li class="fragment step-note">May have wrong timing.</li>
             </ul>
             <p class="fragment tldr"><strong>tl;dr</strong> Core manipulation functions.</p>
+          </section>
+          <section data-transition="convex">
+            <img data-src="images/manipulation_hooks.png" class="screenshot" alt="Menu tab to be manipulated by using hooks." />
+          </section>
+          <section data-transition="convex">
+            <pre><code class="html line-numbers" data-trim>
+              &lt;!-- THEME DEBUG -->
+&lt;!-- THEME HOOK: 'menu__main' -->
+&lt;!-- FILE NAME SUGGESTIONS:
+   * menu--main.html.twig
+   x menu.html.twig
+-->
+&lt;!-- BEGIN OUTPUT from 'core/themes/classy/templates/navigation/menu.html.twig' -->
+&lt;ul class="clearfix menu">
+&lt;!-- // ... -->
+  &lt;li class="menu-item menu-item--active-trail">
+    &lt;a href="/node/6" data-drupal-link-system-path="node/6" class="is-active">Hooks&lt;/a>
+  &lt;/li>
+&lt;!-- // ... -->
+&lt;/ul>
+&lt;!-- END OUTPUT from 'core/themes/classy/templates/navigation/menu.html.twig' -->
+            </code></pre>
+          </section>
+          <section data-transition="convex">
+            <img data-src="images/manipulation_hooks_theme.png" class="screenshot" alt="Themes can define hook implementations in a .theme file." />
+          </section>
+          <section data-transition="convex">
+            <h2 class="filename">themes/SubBartik/subbartik.theme</h2>
+            <pre><code class="php line-numbers" data-trim>
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function subbartik_preprocess_menu__main(&$variables) {
+  // Loop through all menu tabs.
+  foreach ($variables['items'] as &$menu_tab) {
+    // Current tab pointing to node/6 ?
+    if ($menu_tab['url']->toString() == '/node/6') {
+      // Change location.
+      $menu_tab['url']->setRouteParameter('node', '9');
+      // Existing attributes?
+      if (!$attributes = $menu_tab['url']->getOption('attributes')) {
+        $attributes = array('style' => '');
+      }
+      elseif (!isset($attributes['style'])) {
+        $attributes['style'] = '';
+      }
+      // Add custom styling.
+      $attributes['style'] .= 'color:#FFF;background:#00F;';
+      // Add back modified attributes.
+      $menu_tab['url']->setOption('attributes', $attributes);
+    }
+  }
+}
+            </code></pre>
+          </section>
+          <section data-transition="convex">
+            <img data-src="images/manipulation_hooks_theme_result.png" class="screenshot" alt="Results of changing a menu tab using a hook invoked from a custom theme." />
+          </section>
+          <section data-transition="convex">
+            <img data-src="images/manipulation_hooks_module.png" class="screenshot" alt="Modules define hook implementations in a .module file." />
+          </section>
+          <section data-transition="convex">
+            <h2 class="filename">modules/drupalflex/drupalflex.module</h2>
+            <pre><code class="php line-numbers" data-trim>
+&lt;?php
+// ...
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function drupalflex_preprocess_menu(&$variables) {
+  if ($variables['theme_hook_original'] == 'menu__main') {
+    foreach ($variables['items'] as &$menu_tab) {
+      if (strtolower($menu_tab['title']) == 'hooks') {
+        // Add 'Alt' to title.
+        $menu_tab['title'] .= ' Alt';
+        // Existing attributes?
+        if (!$attributes = $menu_tab['url']->getOption('attributes')) {
+          $attributes = array('target' => '_blank');
+        }
+        else {
+          $attributes['target'] .= '_blank';
+        }
+        // Add back modified attributes.
+        $menu_tab['url']->setOption('attributes', $attributes);
+      }
+    }
+  }
+}
+            </code></pre>
+          </section>
+          <section data-transition="convex">
+            <img data-src="images/manipulation_hooks_result.png" class="screenshot" alt="Results of altering a menu tab using hooks defined in a custom theme and module." />
           </section>
         </section>
         <section>
@@ -374,6 +635,64 @@
             </ul>
             <p class="fragment tldr"><strong>tl;dr</strong> Cool way to "hack" Drupal core.</p>
           </section>
+          <section data-transition="convex">
+            <img data-src="images/manipulation_services.png" class="screenshot" alt="Menu tab to be manipulated by using a custom service." />
+          </section>
+          <section data-transition="convex">
+            <img data-src="images/manipulation_services_module.png" class="screenshot" alt="To replace a service a module needs a ServiceProvider class and a Custom Service class file in a \src directory." />
+          </section>
+          <section data-transition="convex">
+            <h2 class="filename">modules/drupalflex/src/DrupalflexServiceProvider.php</h2>
+            <pre><code class="php line-numbers" data-trim>
+              namespace Drupal\drupalflex;
+
+use Drupal\Core\DependencyInjection\ServiceProviderBase;
+use Drupal\Core\DependencyInjection\ContainerBuilder;
+
+class DrupalflexServiceProvider extends ServiceProviderBase {
+  /**
+   * {@inheritdoc}
+   */
+  public function alter(ContainerBuilder $container) {
+    // Override menu_link_tree class with custom.
+    $definition = $container->getDefinition('menu.link_tree');
+    $definition->setClass('Drupal\drupalflex\DrupalflexMenuLinkTree');
+  }
+}
+            </code></pre>
+          </section>
+          <section data-transition="convex">
+            <h2 class="filename">modules/drupalflex/src/DrupalflexMenuLinkTree.php</h2>
+            <pre><code class="php line-numbers" data-trim>
+              namespace Drupal\drupalflex;
+use Drupal\Core\Menu\MenuLinkTree;
+
+class DrupalflexMenuLinkTree extends MenuLinkTree {
+  // Overrides \Drupal\Core\Menu\MenuLinkTree::build().
+  public function build(array $tree) {
+    $build = parent::build($tree);
+    if (isset($build['#items']) && $build['#theme'] == 'menu__main') {
+      foreach ($build['#items'] as &$item ) {
+        if ($item['url']->toString() == '/node/7') {
+          // Change Title.
+          $item['title'] .= ' Alt';
+          // Change Path.
+          $item['url']->setRouteParameter('node', '9');
+          // Add style attributes.
+          $item['url']->setOption('attributes', array(
+            'style' => 'color:#00F;background:#00CEFD;',
+          ));
+        }
+      }
+    }
+    return $build;
+  }
+}
+            </code></pre>
+          </section>
+          <section data-transition="convex">
+            <img data-src="images/manipulation_services_result.png" class="screenshot" alt="Results of changing a menu tab by using a custom service." />
+          </section>
         </section>
         <section>
           <section>
@@ -391,6 +710,112 @@
               <li class="fragment step-note">??</li>
             </ul>
             <p class="fragment tldr"><strong>tl;dr</strong> Real world situations.</p>
+          </section>
+          <section data-transition="convex">
+            <img data-src="images/manipulation_combo.png" class="screenshot" alt="Menu tab to be manupulated by a combination of methods." />
+          </section>
+          <section data-transition="convex">
+            <h2 class="filename">modules/drupalflex/src/DrupalflexMenuLinkTree.php</h2>
+            <pre><code class="php line-numbers" data-trim>
+              //...
+public function build(array $tree) {
+  $build = parent::build($tree);
+  if (isset($build['#items']) && $build['#theme'] == 'menu__main') {
+    foreach ($build['#items'] as &$item ) {
+      // ...
+      if ($item['url']->toString() == '/node/8') {
+        $item['title'] .=' Alt';
+      }
+    }
+  }
+  return $build;
+}
+            </code></pre>
+          </section>
+          <section data-transition="convex">
+            <h2 class="filename">themes/SubBartik/subbartik.theme</h2>
+            <pre><code class="php line-numbers" data-trim>
+              /**
+ * Implements hook_preprocess_HOOK().
+ */
+function subbartik_preprocess_menu__main(&$variables) {
+  // Loop through all menu tabs.
+  foreach ($variables['items'] as &$menu_tab) {
+    // ...
+    $menu_tab['is_combo'] = ($menu_tab['title'] == 'Combinations Alt');
+  }
+}
+            </code></pre>
+          </section>
+          <section data-transition="convex">
+            <h2 class="filename">themes/SubBartik/templates/menu--main.html.twig</h2>
+            <pre><code class="twig line-numbers" data-trim>
+                  &lt;ul class="menu">
+    {# ... #}
+    {% for item in items %}
+       {# ... #}}
+        &lt;li{{ item.attributes.addClass(classes) }}>
+          {%  if item.title|lower == 'templates'|t %}
+            {# ... #}
+          {%  else %}
+            {{ link(item.is_combo ? item.title| reverse : item.title, item.url) }}
+          {%  endif %}
+          {# ... #}
+        &lt;/li>
+    {% endfor %}
+&lt;/ul>
+{# ... #}
+            </code></pre>
+          </section>
+          <section data-transition="convex">
+            <h2 class="filename">themes/SubBartik/css/menu-alter.css</h2>
+            <pre><code class="css line-numbers" data-trim>
+              .menu--main .menu li a.combo {
+  color: #000;
+  font-weight: 800;
+  text-shadow: 0 0 #000 !important;
+  background: red; /* not working, let's see some red */
+  background: -moz-linear-gradient( top ,
+   rgba(255, 0, 0, 1) 0%,
+   rgba(255, 255, 0, 1) 15%,
+   rgba(0, 255, 0, 1) 30%,
+   rgba(0, 255, 255, 1) 50%,
+   rgba(0, 0, 255, 1) 65%,
+   rgba(255, 0, 255, 1) 80%,
+   rgba(255, 0, 0, 1) 100%);
+  background: -webkit-gradient(linear,  left top,  left bottom,
+   color-stop(0%, rgba(255, 0, 0, 1)),
+   color-stop(15%, rgba(255, 255, 0, 1)),
+   color-stop(30%, rgba(0, 255, 0, 1)),
+   color-stop(50%, rgba(0, 255, 255, 1)),
+   color-stop(65%, rgba(0, 0, 255, 1)),
+   color-stop(80%, rgba(255, 0, 255, 1)),
+   color-stop(100%, rgba(255, 0, 0, 1)));
+}
+            </code></pre>
+          </section>
+          <section data-transition="convex">
+            <h2 class="filename">modules/drupalflex/js/menu_later.js</h2>
+            <pre><code class="js line-numbers" data-trim>
+              (function ($, Drupal) {
+  "use strict";
+  Drupal.behaviors.drupalFlexMenuAlter = {
+    attach: function (context) {
+      $('.menu--main ul.menu li a').each(function(){
+        if ($(this).attr('href') == '/node/5') {
+          // ...
+        }
+        else if ($(this).attr('href') == '/node/8'){
+          $(this).addClass('combo');
+        }
+      });
+    }
+  }
+})(jQuery, Drupal);
+            </code></pre>
+          </section>
+          <section data-transition="convex">
+            <img data-src="images/manipulation_combo_result.png" class="screenshot" alt="Result of changing a menu tab using a multiple of methods." />
           </section>
         </section>
         <section>
