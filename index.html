@@ -197,7 +197,7 @@
               <li class="fragment list-header">Cons</li>
               <li class="fragment step-note">Templates may be wrong level.</li>
               <li class="fragment step-note">Not everything is templated.</li>
-              <li class="fragment step-note">May require server side code.</li>
+              <li class="fragment step-note">Requires a custom theme.</li>
             </ul>
             <p class="fragment tldr"><strong>tl;dr</strong> Control rendered HTML.</p>
           </section>
@@ -334,7 +334,7 @@ parameters:
               <li class="fragment list-header">Cons</li>
               <li class="fragment step-note">Can only change display.</li>
               <li class="fragment step-note">Complex element chains.</li>
-              <li class="fragment step-note">??</li>
+              <li class="fragment step-note">Requires custom theme or Module.</li>
             </ul>
             <p class="fragment tldr"><strong>tl;dr</strong> Position, size and color.</p>
           </section>
@@ -434,7 +434,7 @@ menu-alter-main:
               <li class="fragment list-header">Cons</li>
               <li class="fragment step-note">Browser dependencies.</li>
               <li class="fragment step-note">Delay before execution.</li>
-              <li class="fragment step-note">Alterable by client.</li>
+              <li class="fragment step-note">Can be altered by client.</li>
             </ul>
             <p class="fragment tldr"><strong>tl;dr</strong> Client controlled functionality.</p>
           </section>
@@ -623,9 +623,9 @@ function drupalflex_preprocess_menu(&$variables) {
             <h1>#7. Services</h1>
             <ul>
               <li class="fragment list-header">Pros</li>
+              <li class="fragment step-note">More powerful then Hooks.</li>
               <li class="fragment step-note">Can alter core functionality.</li>
               <li class="fragment step-note">Can replace core functionality.</li>
-              <li class="fragment step-note">??</li>
             </ul>
             <ul>
               <li class="fragment list-header">Cons</li>
@@ -706,8 +706,8 @@ class DrupalflexMenuLinkTree extends MenuLinkTree {
             <ul>
               <li class="fragment list-header">Cons</li>
               <li class="fragment step-note">Requires multiple skillsets.</li>
+              <li class="fragment step-note">Can be complex</li>
               <li class="fragment step-note">Harder to debug.</li>
-              <li class="fragment step-note">??</li>
             </ul>
             <p class="fragment tldr"><strong>tl;dr</strong> Real world situations.</p>
           </section>
