@@ -97,23 +97,13 @@
           </section>
         </section>
         <section>
-          <section data-transition="convex">
-            <h1>Goals of this Session</h1>
-            <p>
-                <ul>
-                  <li class="fragment step-note">There is no "right" way, just "right for me" way.</li>
-                  <li class="fragment step-note">There are many data manipulation methods.</li>
-                  <li class="fragment step-note">The considerations to take into account.</li>
-                </ul>
-            </p>
-          </section>
-          <section data-transition="convex">
+          <section data-transition>
             <h1>Focus of this Session</h1>
             <p>
               <ul>
-                <li class="fragment step-note">Changing title, destination & display of menu tabs.</li>
-                <li class="fragment step-note">8 methods of manipulation.</li>
-                <li class="fragment step-note">Non-developer, front-end, back-end skillsets.</li>
+                <li class="fragment step-note">8 methods of manipulation</li>
+                <li class="fragment step-note">Changing title, destination & display of menu tabs</li>
+                <li class="fragment step-note">Non-developer, front-end, back-end skillsets</li>
               </ul>
             </p>
           </section>
@@ -121,9 +111,9 @@
             <h1>Session Environment</h1>
             <p>
               <ul>
-                <li class="fragment step-note">A standard Drupal 8.0.1 install.</li>
-                <li class="fragment step-note">Bartik sub-theme with Slate color.</li>
-                <li class="fragment step-note">Not live. (blame Murphy).</li>
+                <li class="fragment step-note">A standard Drupal 8.0.1 install</li>
+                <li class="fragment step-note">Bartik sub-theme with Slate color</li>
+                <li class="fragment step-note">Not live. (blame Murphy)</li>
               </ul>
             </p>
           </section>
@@ -138,20 +128,13 @@
         </section>
         <section>
           <section>
-            <h1>#1. Core UI</h1>
+            <h1>#1. Core Admin UI</h1>
             <ul>
-              <li class="fragment list-header">Pros</li>
-              <li class="fragment step-note">"Easy" to use.</li>
-              <li class="fragment step-note">No dev skills needed.</li>
-              <li class="fragment step-note">Changes are quick.</li>
+              <li class="fragment step-note">"Easy" to use</li>
+              <li class="fragment step-note">No dev skills needed</li>
+              <li class="fragment step-note">Capabilities are limited</li>
             </ul>
-            <ul>
-              <li class="fragment list-header">Cons</li>
-              <li class="fragment step-note">Limited capabilities.</li>
-              <li class="fragment step-note">Options too broad.</li>
-              <li class="fragment step-note">Options too narrow.</li>
-            </ul>
-            <p class="fragment tldr"><strong>tl;dr</strong> Out of the box functionality.</p>
+            <p class="fragment tldr"><strong>Change data by</strong> clicking buttons.</p>
           </section>
           <section data-transition="convex">
             <img data-src="images/manipulation_core_ui.gif" class="screenshot animated-gif" alt="Using Drupal core admin UI to change the title and destination of a menu tab." />
@@ -164,18 +147,11 @@
           <section>
             <h1>#2. Modules</h1>
             <ul>
-              <li class="fragment list-header">Pros</li>
-              <li class="fragment step-note">Extends Drupal core.</li>
-              <li class="fragment step-note">Many options available.</li>
-              <li class="fragment step-note">None exist? Build your own.</li>
+              <li class="fragment step-note">Many options available</li>
+              <li class="fragment step-note">Can build your own (dev skillsets)</li>
+              <li class="fragment step-note">Require long term maintence.</li>
             </ul>
-            <ul>
-              <li class="fragment list-header">Cons</li>
-              <li class="fragment step-note">Added complexity.</li>
-              <li class="fragment step-note">May do more then needed.</li>
-              <li class="fragment step-note">Potential Security issues.</li>
-            </ul>
-            <p class="fragment tldr"><strong>tl;dr</strong> Extend Drupal core.</p>
+            <p class="fragment tldr"><strong>Change data by</strong> extending Drupal core.</p>
           </section>
           <section data-transition="convex">
             <img data-src="images/manipulation_modules.gif" class="screenshot animated-gif" alt="Using a Drupal contrib module to change the styling and target of a menu tab." />
@@ -188,18 +164,11 @@
           <section>
             <h1>#3. Templates</h1>
             <ul>
-              <li class="fragment list-header">Pros</li>
-              <li class="fragment step-note">Replace Drupal templates.</li>
-              <li class="fragment step-note">Hardcode or use Twig logic.</li>
-              <li class="fragment step-note">Changes are cached.</li>
+              <li class="fragment step-note">Almost everything is templated</li>
+              <li class="fragment step-note">Change HTML/Twig code (dev skillsets)</li>
+              <li class="fragment step-note">Requires a custom theme</li>
             </ul>
-            <ul>
-              <li class="fragment list-header">Cons</li>
-              <li class="fragment step-note">Templates may be wrong level.</li>
-              <li class="fragment step-note">Not everything is templated.</li>
-              <li class="fragment step-note">Requires a custom theme.</li>
-            </ul>
-            <p class="fragment tldr"><strong>tl;dr</strong> Control rendered HTML.</p>
+            <p class="fragment tldr"><strong>Change data by</strong> controling rendered HTML.</p>
           </section>
           <section data-transition="convex">
             <img data-src="images/manipulations_templates.png" class="screenshot" alt="Menu tab to be manipulated by using a custom template and twig." />
@@ -325,18 +294,11 @@ parameters:
           <section>
             <h1>#4. Custom CSS</h1>
             <ul>
-              <li class="fragment list-header">Pros</li>
-              <li class="fragment step-note">Control of display.</li>
-              <li class="fragment step-note">Target specific elements.</li>
-              <li class="fragment step-note">Can be added by theme or module.</li>
+              <li class="fragment step-note">Control inclusion</li>
+              <li class="fragment step-note">Target specific elements (dev skillsets)</li>
+              <li class="fragment step-note">Requires custom theme or module</li>
             </ul>
-            <ul>
-              <li class="fragment list-header">Cons</li>
-              <li class="fragment step-note">Can only change display.</li>
-              <li class="fragment step-note">Complex element chains.</li>
-              <li class="fragment step-note">Requires custom theme or Module.</li>
-            </ul>
-            <p class="fragment tldr"><strong>tl;dr</strong> Position, size and color.</p>
+            <p class="fragment tldr"><strong>Change data by</strong> controlling display.</p>
           </section>
           <section data-transition="convex">
             <img data-src="images/manipulation_css.png" class="screenshot" alt="Menu tab to be manipulated by using custom css." />
@@ -347,7 +309,6 @@ parameters:
               menu-alter:
   version: VERSION
   css:
-    theme:
       css/menu_alter.css: {}
             </code></pre>
           </section>
@@ -381,12 +342,10 @@ libraries:
               menu-alter:
   version: VERSION
   css:
-    theme:
       css/menu_alter.css: {}
 menu-alter-main:
   version: VERSION
   css:
-    theme:
       css/menu_alter_main.css: {}
             </code></pre>
           </section>
@@ -425,18 +384,11 @@ menu-alter-main:
           <section>
             <h1>#5. Custom JavaScript</h1>
             <ul>
-              <li class="fragment list-header">Pros</li>
-              <li class="fragment step-note">Manipulate any DOM item.</li>
-              <li class="fragment step-note">Can be based on actions.</li>
-              <li class="fragment step-note">Less server processing.</li>
+              <li class="fragment step-note">Control execution</li>
+              <li class="fragment step-note">Change based on actions</li>
+              <li class="fragment step-note">Dependent on client browser</li>
             </ul>
-            <ul>
-              <li class="fragment list-header">Cons</li>
-              <li class="fragment step-note">Browser dependencies.</li>
-              <li class="fragment step-note">Delay before execution.</li>
-              <li class="fragment step-note">Can be altered by client.</li>
-            </ul>
-            <p class="fragment tldr"><strong>tl;dr</strong> Client controlled functionality.</p>
+            <p class="fragment tldr"><strong>Change data by</strong> manipulating DOM elements.</p>
           </section>
           <section data-transition="convex">
             <img data-src="images/manipulation_js.png" class="screenshot" alt="Menu tab to be manipulated by using custom javascript." />
@@ -449,7 +401,6 @@ menu-alter-main:
             <pre><code class="yml line-numbers" data-trim>
 menu-alter:
   css:
-    theme:
       css/menu_alter.css: {}
   js:
     js/menu_alter.js: {}
@@ -512,18 +463,11 @@ function drupalflex_page_attachments(array &$attachments) {
           <section>
             <h1>#6. Hooks</h1>
             <ul>
-              <li class="fragment list-header">Pros</li>
-              <li class="fragment step-note">Provided by core and modules.</li>
-              <li class="fragment step-note">Use in custom theme or module.</li>
-              <li class="fragment step-note">Easiest way to extend core.</li>
+              <li class="fragment step-note">Provided by core and modules</li>
+              <li class="fragment step-note">Requires custom theme or module</li>
+              <li class="fragment step-note">Requires PHP skillset</li>
             </ul>
-            <ul>
-              <li class="fragment list-header">Cons</li>
-              <li class="fragment step-note">Not used everywhere.</li>
-              <li class="fragment step-note">May be wrong level.</li>
-              <li class="fragment step-note">May have wrong timing.</li>
-            </ul>
-            <p class="fragment tldr"><strong>tl;dr</strong> Core manipulation functions.</p>
+            <p class="fragment tldr"><strong>Change data by</strong> interacting with core code.</p>
           </section>
           <section data-transition="convex">
             <img data-src="images/manipulation_hooks.png" class="screenshot" alt="Menu tab to be manipulated by using hooks." />
@@ -622,18 +566,11 @@ function drupalflex_preprocess_menu(&$variables) {
           <section>
             <h1>#7. Services</h1>
             <ul>
-              <li class="fragment list-header">Pros</li>
-              <li class="fragment step-note">More powerful then Hooks.</li>
-              <li class="fragment step-note">Can alter core functionality.</li>
-              <li class="fragment step-note">Can replace core functionality.</li>
+              <li class="fragment step-note">Control global tasks</li>
+              <li class="fragment step-note">Requires OOP skillset</li>
+              <li class="fragment step-note">Requires a custom module</li>
             </ul>
-            <ul>
-              <li class="fragment list-header">Cons</li>
-              <li class="fragment step-note">Replacing/altering a global task.</li>
-              <li class="fragment step-note">Can be complex.</li>
-              <li class="fragment step-note">Requires a custom module.</li>
-            </ul>
-            <p class="fragment tldr"><strong>tl;dr</strong> Cool way to "hack" Drupal core.</p>
+            <p class="fragment tldr"><strong>Change data by</strong> replacing core functionality.</p>
           </section>
           <section data-transition="convex">
             <img data-src="images/manipulation_services.png" class="screenshot" alt="Menu tab to be manipulated by using a custom service." />
@@ -698,18 +635,11 @@ class DrupalflexMenuLinkTree extends MenuLinkTree {
           <section>
             <h1>#8. Combinations</h1>
             <ul>
-              <li class="fragment list-header">Pros</li>
               <li class="fragment step-note">Most control over Drupal</li>
-              <li class="fragment step-note">Methods based on skilsets</li>
-              <li class="fragment step-note">Methods based on needs</li>
-            </ul>
-            <ul>
-              <li class="fragment list-header">Cons</li>
               <li class="fragment step-note">Requires multiple skillsets</li>
-              <li class="fragment step-note">Can be complex</li>
-              <li class="fragment step-note">Harder to debug</li>
+              <li class="fragment step-note">Real world scenario</li>
             </ul>
-            <p class="fragment tldr"><strong>tl;dr</strong> Real world situations.</p>
+            <p class="fragment tldr"><strong>Change data by</strong> using multiple methods.</p>
           </section>
           <section data-transition="convex">
             <img data-src="images/manipulation_combo.png" class="screenshot" alt="Menu tab to be manupulated by a combination of methods." />
@@ -817,6 +747,13 @@ function subbartik_preprocess_menu__main(&$variables) {
           <section data-transition="convex">
             <img data-src="images/manipulation_combo_result.png" class="screenshot" alt="Result of changing a menu tab using a multiple of methods." />
           </section>
+        </section>
+        <section>
+          <h1>Considerations</h1>
+          <ul>
+            <li class="fragment step-note">How quickly do changes have to occur?</li>
+            <li class="fragment step-note">Where are changes needed?</li>
+            <li class="fragment step-note">What skillsets are available?</li>
         </section>
         <section>
           <section>
