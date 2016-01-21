@@ -145,12 +145,12 @@
         <section>
           <section>
             <h1>#1. Core Admin UI</h1>
+            <p class="fragment tldr"><strong>Change data by</strong> clicking buttons.</p>
             <ul>
               <li class="fragment step-note">"Easy" to use</li>
               <li class="fragment step-note">No dev skills needed</li>
               <li class="fragment step-note">Capabilities are limited</li>
             </ul>
-            <p class="fragment tldr"><strong>Change data by</strong> clicking buttons.</p>
             <aside class="notes">
               <ul>
                 <li>Easy after learning Drupal</li>
@@ -171,12 +171,12 @@
         <section>
           <section>
             <h1>#2. Modules</h1>
+            <p class="fragment tldr"><strong>Change data by</strong> extending Drupal core.</p>
             <ul>
               <li class="fragment step-note">Many options available</li>
               <li class="fragment step-note">Can build your own (dev skillsets)</li>
               <li class="fragment step-note">Require long term maintence.</li>
             </ul>
-            <p class="fragment tldr"><strong>Change data by</strong> extending Drupal core.</p>
             <aside class="notes">
               <ul>
                 <li>Community modules available.</li>
@@ -197,12 +197,12 @@
         <section>
           <section>
             <h1>#3. Templates</h1>
+            <p class="fragment tldr"><strong>Change data by</strong> controling rendered HTML.</p>
             <ul>
               <li class="fragment step-note">Almost everything is templated</li>
               <li class="fragment step-note">Change HTML/Twig code (dev skillsets)</li>
               <li class="fragment step-note">Requires a custom theme</li>
             </ul>
-            <p class="fragment tldr"><strong>Change data by</strong> controling rendered HTML.</p>
             <aside class="notes">
               <ul>
                 <li>All data presented to user.</li>
@@ -273,12 +273,12 @@
         <section>
           <section>
             <h1>#4. Custom CSS</h1>
+            <p class="fragment tldr"><strong>Change data by</strong> controlling display.</p>
             <ul>
               <li class="fragment step-note">Target specific elements (dev skillsets)</li>
               <li class="fragment step-note">Control inclusion with a library</li>
               <li class="fragment step-note">Requires custom theme or module</li>
             </ul>
-            <p class="fragment tldr"><strong>Change data by</strong> controlling display.</p>
             <aside class="notes">
               <ul>
                 <li>Specific or multiple element alters. Markup changes?</li>
@@ -371,12 +371,12 @@ menu-alter-main:
         <section>
           <section>
             <h1>#5. Custom JavaScript</h1>
+            <p class="fragment tldr"><strong>Change data by</strong> manipulating DOM elements.</p>
             <ul>
               <li class="fragment step-note">Change based on actions</li>
               <li class="fragment step-note">Control inclusion with a library</li>
               <li class="fragment step-note">Dependent on client browser</li>
             </ul>
-            <p class="fragment tldr"><strong>Change data by</strong> manipulating DOM elements.</p>
             <aside class="notes">
               <ul>
                 <li>user actions, items on page.</li>
@@ -439,7 +439,7 @@ function drupalflex_page_attachments(array &$attachments) {
   $attachments['#attached']['library'][] = 'drupalflex/menu-alter';
 }
             </code><span class="codename">modules/drupalflex/drupalflex.module</span></pre>
-            <p class="caption">Mdules need to use PHP functions to include libraries onto pages. Using an instance of the page_attachments hook to include the menu-alter on every page. </p>
+            <p class="caption">Modules need to use PHP functions to include libraries onto pages. Using an instance of the page_attachments hook to include the menu-alter on every page. </p>
           </section>
           <section data-transition="convex">
             <img data-src="images/manipulation_js_result.png" class="screenshot" alt="Result of using custom javascript to manipulate a menu tab." />
@@ -449,12 +449,12 @@ function drupalflex_page_attachments(array &$attachments) {
         <section>
           <section>
             <h1>#6. Hooks</h1>
+            <p class="fragment tldr"><strong>Change data by</strong> interacting with core code.</p>
             <ul>
               <li class="fragment step-note">Provided by core and modules</li>
               <li class="fragment step-note">Requires custom theme or module</li>
               <li class="fragment step-note">Requires PHP skillset</li>
             </ul>
-            <p class="fragment tldr"><strong>Change data by</strong> interacting with core code.</p>
             <aside class="notes">
               <ul>
                 <li>Special PHP functions. Interact with processes.</li>
@@ -552,12 +552,12 @@ function drupalflex_preprocess_menu(&$variables) {
         <section>
           <section>
             <h1>#7. Services</h1>
+            <p class="fragment tldr"><strong>Change data by</strong> replacing core functionality.</p>
             <ul>
               <li class="fragment step-note">Control global tasks</li>
               <li class="fragment step-note">Requires OOP skillset</li>
               <li class="fragment step-note">Requires a custom module</li>
             </ul>
-            <p class="fragment tldr"><strong>Change data by</strong> replacing core functionality.</p>
             <aside class="notes">
               <ul>
                 <li>PHP objects for global functionality.</li>
@@ -625,12 +625,12 @@ class DrupalflexMenuLinkTree extends MenuLinkTree {
         <section>
           <section>
             <h1>#8. Combinations</h1>
+            <p class="fragment tldr"><strong>Change data by</strong> using multiple methods.</p>
             <ul>
               <li class="fragment step-note">Real world scenario</li>
               <li class="fragment step-note">Use multiple skillsets</li>
               <li class="fragment step-note">Most control over Drupal</li>
             </ul>
-            <p class="fragment tldr"><strong>Change data by</strong> using multiple methods.</p>
             <aside class="notes">
               <ul>
                 <li>Most realistic.</li>
