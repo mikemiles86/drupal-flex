@@ -50,6 +50,9 @@ pre span.codename {
   color: #CCC  !important;
   font-style: italic !important;
 }
+.caption {
+  clear: both;
+}
 
 .screenshot {
   display: inline-block;
