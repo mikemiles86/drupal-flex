@@ -57,7 +57,7 @@
     </div>
 
 			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
+			<div class="slides" data-captions-aside>
         <section>
           <section data-transition="convex">
             <h1>The Flexibility of Drupal</h1>
@@ -66,9 +66,7 @@
             <aside class="notes">
               <ul>
                 <li>Thank You!</li>
-                <li>What is flexibility?</li>
-                <li>Not what can Drupal do</li>
-                <li>"Your way" in Drupal</li>
+              </ul>
             </aside>
           </section>
           <section data-transition="convex">
@@ -98,7 +96,7 @@
               </p>
               <aside class="notes">
                 <ul>
-                  <li>Genuine - full service digital agency.</li>
+                  <li>Assoc. Director.</li>
                   <li>Specialize in Brand engagments, SEO, UX, Design, Video, Development.</li>
                   <li>Home Office in Boston. Offices in NYC, SF, Chicago.</li>
                 </ul>
@@ -106,13 +104,30 @@
           </section>
         </section>
         <section>
-          <section data-transition>
+          <section>
+            <h1>Flexibility?</h1>
+            <p>
+              <ul>
+                <li class="fragment step-note">Many manipulation methods</li>
+                <li class="fragment step-note">Supports different skillsets</li>
+                <li class="fragment step-note">Do what works for you</li>
+              </ul>
+            </p>
+            <aside class="notes">
+              <ul>
+                <li>Opensource freedom</li>
+                <li>non, front, backend dev</li>
+                <li>Changes based on your needs.</li>
+              </ul>
+            </aside>
+          </section>
+          <section data-transition="convex">
             <h1>Focus of this Session</h1>
             <p>
               <ul>
                 <li class="fragment step-note">8 methods of manipulation</li>
-                <li class="fragment step-note">Non-developer, front-end and back-end skillsets</li>
-                <li class="fragment step-note">Changing title, destination & display of menu tabs</li>
+                <li class="fragment step-note">Change title, destination & display of menu tabs</li>
+                <li class="fragment step-note">Menus are universal</li>
               </ul>
             </p>
             <aside class="notes">
@@ -161,7 +176,7 @@
           </section>
           <section data-transition="convex">
             <img data-src="images/manipulation_core_ui.gif" class="screenshot animated-gif" alt="Using Drupal core admin UI to change the title and destination of a menu tab." />
-            <p class="caption">Login as admin. Go to Structure, Menus and edit the main menu. Then edit the first menu link. Can change the Title and destination using Admin interface.</p>
+            <p class="caption">Login as admin. Go to Structure, Menus and edit the main menu. Then edit the first menu link. Able to change the title and destination using Admin interface.</p>
           </section>
           <section data-transition="convex">
             <img data-src="images/manipulation_core_ui_result.png" class="screenshot" alt="Result of using the Drupal core admin UI to change menu table title and destination." />
@@ -174,8 +189,8 @@
             <p class="fragment tldr"><strong>Change data by</strong> extending Drupal core.</p>
             <ul>
               <li class="fragment step-note">Many options available</li>
-              <li class="fragment step-note">Can build your own (dev skillsets)</li>
-              <li class="fragment step-note">Require long term maintence.</li>
+              <li class="fragment step-note">Can build your own</li>
+              <li class="fragment step-note">Require long term maintence</li>
             </ul>
             <aside class="notes">
               <ul>
@@ -187,7 +202,7 @@
           </section>
           <section data-transition="convex">
             <img data-src="images/manipulation_modules.gif" class="screenshot animated-gif" alt="Using a Drupal contrib module to change the styling and target of a menu tab." />
-            <p class="caption">Want to extend core to change display of second menu link. Find, download and install the Menu Link Attributes module from drupal.org. Use Drupal Admin as in last method to alter menu tab. Module extended form to allow adding HTML attributes such as inline styles.</p>
+            <p class="caption">Want to extend core to change display of second menu link. Find, download and install the Menu Link Attributes module from drupal.org. Use Drupal Admin as in last method to alter menu tab. Module extends the form to allow adding HTML attributes such as inline styles.</p>
           </section>
           <section data-transition="convex">
             <img data-src="images/manipulation_modules_result.png" class="screenshot" alt="Result of using a Drupal contrib module to change the styling and target of a menu tab." />
@@ -200,7 +215,7 @@
             <p class="fragment tldr"><strong>Change data by</strong> controling rendered HTML.</p>
             <ul>
               <li class="fragment step-note">Almost everything is templated</li>
-              <li class="fragment step-note">Change HTML/Twig code (dev skillsets)</li>
+              <li class="fragment step-note">Change HTML/Twig code</li>
               <li class="fragment step-note">Requires a custom theme</li>
             </ul>
             <aside class="notes">
@@ -237,11 +252,11 @@
 &lt;/ul>
 &lt;!-- END OUTPUT from 'core/themes/classy/templates/navigation/menu.html.twig' -->
             </code></pre>
-            <p class="caption">Debug info for main menu tells what template is used (line 5) and where it is located (line 7). Provides template suggestion on how to override (line 4).</p>
+            <p class="caption">Use theme debug info for main menu. Tells the template used (line 5) and where to locate it (line 7). Provides template suggestion on how to override for just the main menu (line 4).</p>
           </section>
           <section data-transition="convex">
             <img data-src="images/manipulation_templates_theme_files.png" class="screenshot" alt="Copy and rename the default menu.html.twig file as menu--main.html.twig in custom sub theme templates/ directry." />
-          <p class="caption">Copy menu.html.twig from classy theme and save as menu--main.html.twig in templates directory of custom "subBartik" theme.</p>
+          <p class="caption">Copy the menu twig template from classy theme. Save as menu--main.html.twig in templates directory of custom "subBartik" theme.</p>
           </section>
            <section data-transition="convex">
             <pre><code class="twig line-numbers" data-trim>
@@ -263,11 +278,11 @@
 {# ... #}
 {% endmacro %}
             </code><span class="codename">themes/SubBartik/templates/menu--main.html.twig</span></pre>
-            <p class="caption">Alter markup in template override. For menu list item markup (lines 5 - 14). It current item is titled 'Templates' (line 6) use a hardcoded HTML link.</p>
+            <p class="caption">Alter markup in template override. For menu list item markup (lines 5 - 14).  If 'Templates' is the title of the current menu item (line 6), then use a hardcoded HTML link (line 7).</p>
           </section>
           <section data-transition="convex">
             <img data-src="images/manipulation_templates_result.png" class="screenshot" alt="Result of using twig logic a template override in a custom theme to alter a menu tab." />
-            <p class="caption">After Drupal rebuilds cache for any page using the custom, when renders the main menu will use template override. Because of custom logic the 'Templates' tab now displays a different styled link.</p>
+            <p class="caption">Clear the Drupal cache to see the changes. When rendering, Drupal uses template override for main menu. Custom logic alters the 'Templates' tab to displays a different styled link.</p>
           </section>
         </section>
         <section>
@@ -275,7 +290,7 @@
             <h1>#4. Custom CSS</h1>
             <p class="fragment tldr"><strong>Change data by</strong> controlling display.</p>
             <ul>
-              <li class="fragment step-note">Target specific elements (dev skillsets)</li>
+              <li class="fragment step-note">Target specific elements</li>
               <li class="fragment step-note">Control inclusion with a library</li>
               <li class="fragment step-note">Requires custom theme or module</li>
             </ul>
@@ -298,14 +313,14 @@
   css:
       css/menu_alter.css: {}
             </code><span class="codename">themes/SubBartik/subbartik.libraries.yml</span></pre>
-            <p class="caption">Modules/Themes define libraries in a [name].libraries.yml file. Defining a library named 'menu-alter' (line 1) and what css files it requires (lines 2 -3).</p>
+            <p class="caption">Modules/Themes define libraries in a [name].libraries.yml file. Defining a library named 'menu-alter' (line 1) and the css files it includes (lines 2 -3)..</p>
           </section>
           <section data-transition="convex">
             <pre><code class="css line-numbers" data-trim>
               .menu--main .menu li a[data-drupal-link-system-path="node/4"] {
   background: #0000FF;
             </code><span class="codename">themes/SubBartik/css/menu_alter.css</span></pre>
-            <p class="caption">CSS selector chains can become complicated. Here, changing the background color for a link in a list item in the .main--main .menu list, with a specific value for a data attribute.</p>
+            <p class="caption">CSS selector chains can become complicated. Targeting a link item in the main menu list, based on data attribute value. Anything that matches will have background color changed.</p>
           </section>
           <section data-transition="convex">
             <pre><code class="yml line-numbers" data-trim>
@@ -318,7 +333,7 @@ core: 8.x
 libraries:
   - subbartik/menu-alter
             </code><span class="codename">themes/SubBartik/subbartik.info.yml</span></pre>
-            <p class="caption">Themes can include libraries globally (on every page) by listing them in the info.yml file for the theme (lines 7 -8).</p>
+            <p class="caption">Themes can include libraries globally by adding to *.info.yml file. Including 'menu-alter' library globally for sub-theme (lines 7 - 8).</p>
           </section>
           <section data-transition="convex">
             <img data-src="images/manipulation_css_global.png" class="screenshot" alt="Background color of menu tab changed by adding a css file using a library in a custom theme." />
@@ -335,7 +350,7 @@ menu-alter-main:
   css:
       css/menu_alter_main.css: {}
             </code><span class="codename">themes/SubBartik/subbartik.libraries.yml</span></pre>
-            <p class="caption">A *.libraries.yml file, can include multiple libraries, with different names (line 5) and included files (line 7).</p>
+            <p class="caption">A *.libraries.yml file, can include many libraries. Each library has a unique name and included files. Add a new 'menu-alter-main' library  (line 5 - 7).</p>
           </section>
           <section data-transition="convex">
             <pre><code class="css line-numbers" data-trim>
@@ -361,11 +376,11 @@ menu-alter-main:
     {% for item in items %}
       {# ... #}
             </code><span class="codename">themes/SubBartik/templates/menu--main.html.twig</span></pre>
-            <p class="caption">Can use the twig function attach_library (Line 1) to includes libraries for specific templates. The menu-alter-text library will only be added to pages that use the menu--main.html.twig template.</p>
+            <p class="caption">Include libraries for specific templates by using the 'attach_library' Twig function. Include the 'menu-alter-main' library  will only when rendering the main menu.</p>
           </section>
           <section data-transition="convex">
               <img data-src="images/manipulation_css_result.png" class="screenshot" alt="Result of changing a menu tab by using custom CSS attached as libraries." />
-              <p class="caption">Drupal renders the main menu, which says to include the menu-alter-text library and its css file. This causes the text in the tab to dispaly as white.</p>
+              <p class="caption">Drupal renders main menu using template override. Template includes function to attach library (and css) on the page.  Custom CSS causes the text in the tab to display as white.</p>
           </section>
         </section>
         <section>
@@ -391,7 +406,7 @@ menu-alter-main:
           </section>
           <section data-transition="convex">
             <img data-src="images/manipulation_js_module.png" class="screenshot" alt="Custom module to manipulate a menu tab." />
-            <p class="caption">Have a custom module called "drupalflex" to use for including custom Javascript.</p>
+            <p class="caption">Like themes, modules need to define libraries in a *.libraries.yml file. Will add a library to custom "drupalflex" module to include custom JavaScript.</p>
           </section>
           <section data-transition="convex">
             <pre><code class="yml line-numbers" data-trim>
@@ -405,7 +420,7 @@ menu-alter:
      - core/jquery.once
      - core/drupal
             </code><span class="codename">modules/drupalflex/drupalflex.libraries.yml</span></pre>
-            <p class="caption">Create a library for custom module in the *.libraries.yml file. Library contains css files (lines 2 - 3), javascript files (lines 4 - 5) and dependencies on other libraries (lines 6 - 9). </p>
+            <p class="caption">A library can contain many files as well as, depend on other libraries. Library contains css files (lines 2 - 3), javascript files (lines 4 - 5) and dependencies on other libraries (lines 6 - 9). </p>
           </section>
           <section data-transition="convex">
             <pre><code class="js line-numbers" data-trim>
@@ -426,7 +441,7 @@ menu-alter:
   }
 })(jQuery, Drupal);
             </code><span class="codename">modules/drupalflex/js/menu_alter.js</span></pre>
-            <p class="caption">Create a Drupal behaviour (line 3) to execute when DOM is loaded. Loop through each link item in the main menu (line 5). If link points to node/5 (line 6), alter display and destination (lines 7 - 11).</p>
+            <p class="caption">Drupal behaviors are like jQuery document ready events. Drupal executes them when DOM loads. Create a custom behavior (line 3). Loop through each link item in the main menu (line 5). If link points to node/5 (line 6) alter display and destination (lines 7 - 11).</p>
           </section>
           <section data-transition="convex">
             <pre><code class="php line-numbers" data-trim>
@@ -439,11 +454,11 @@ function drupalflex_page_attachments(array &$attachments) {
   $attachments['#attached']['library'][] = 'drupalflex/menu-alter';
 }
             </code><span class="codename">modules/drupalflex/drupalflex.module</span></pre>
-            <p class="caption">Modules need to use PHP functions to include libraries onto pages. Using an instance of the page_attachments hook to include the menu-alter on every page. </p>
+            <p class="caption">Modules need to use PHP code to include libraries onto pages. Use an instance of the page_attachments hook to include the menu-alter on every page.</p>
           </section>
           <section data-transition="convex">
             <img data-src="images/manipulation_js_result.png" class="screenshot" alt="Result of using custom javascript to manipulate a menu tab." />
-            <p class="caption">After enabling module, when Drupal loads the page it will invoke hook in custom module. This will tell Drupal to include custom javascript. After DOM loads, javascript gets executed and alters the menu tab.</p>
+            <p class="caption">When Drupal loads the page it will invoke the hook instance in the "drupalflex" module. This will tell Drupal to include the library the contains the custom JavaScript. After DOM loads, JavaScript gets executed and alters the menu tab.</p>
           </section>
         </section>
         <section>
@@ -465,7 +480,7 @@ function drupalflex_page_attachments(array &$attachments) {
           </section>
           <section data-transition="convex">
             <img data-src="images/manipulation_hooks.png" class="screenshot" alt="Menu tab to be manipulated by using hooks." />
-            <p class="caption">Can alter a menu tab by using a hook in a custom theme of module.</p>
+            <p class="caption">Can alter a menu tab by using a hook in a custom theme or module.</p>
           </section>
           <section data-transition="convex">
             <pre><code class="html line-numbers" data-trim>
@@ -512,7 +527,7 @@ function subbartik_preprocess_menu__main(&$variables) {
   }
 }
             </code><span class="codename">themes/SubBartik/subbartik.theme</span></pre>
-            <p class="caption">Themes implement hooks in a *.theme file. Creating an instance of the preprocess_menu__main hook (line 4). Looping through all items in the main menu (line 6). If menu item points to node/6 (line 8), then alter the destination and styling (lines 10 - 21).</p>
+            <p class="caption">Themes place hooks in a *.theme file. Creating an instance of the preprocess_menu__main hook (line 4). Looping through all items in the main menu (line 6). If menu item points to node/6 (line 8), then alter the destination and styling (lines 10 - 21).</p>
           </section>
           <section data-transition="convex">
             <img data-src="images/manipulation_hooks_theme_result.png" class="screenshot" alt="Results of changing a menu tab using a hook invoked from a custom theme." />
@@ -542,7 +557,7 @@ function drupalflex_preprocess_menu(&$variables) {
   }
 }
             </code><span class="codename">modules/drupalflex/drupalflex.module</span></pre>
-            <p class="caption">Custom modules invoke hooks in the *.module file. In custom module, creating an instance of preprocess_menu hook (line 3). Check if processing main menu (line 4), and loop through menu items (line 5). For menu item titled 'hooks' (line 6) alter title and target (lines 7 - 17).</p>
+            <p class="caption">Custom modules invoke hooks in the *.module file. In custom "drupalflex" module, creating an instance of preprocess_menu hook (line 3). Check if processing main menu (line 4), and loop through menu items (line 5). For menu item titled 'hooks' (line 6) alter title and target (lines 7 - 17).</p>
           </section>
           <section data-transition="convex">
             <img data-src="images/manipulation_hooks_result.png" class="screenshot" alt="Results of altering a menu tab using hooks defined in a custom theme and module." />
@@ -615,11 +630,11 @@ class DrupalflexMenuLinkTree extends MenuLinkTree {
   }
 }
             </code><span class="codename">modules/drupalflex/src/DrupalflexMenuLinkTree.php</span></pre>
-            <p class="caption">Custom MenuLinkTree service class, extends base class (line 4). Override build method (line 6), which builds array of menu links. For only the main menu (line 8), loop through each menu item (line 9). If menu item points to node/7 (line 10) alter location and display (lines 11 - 16).</p>
+            <p class="caption">Custom MenuLinkTree service class that extends the core base class (line 4). Override build method (line 6), which builds array of menu links. For only the main menu (line 8), loop through each menu item (line 9). If menu item points to node/7 (line 10) alter location and display (lines 11 - 16).</p>
           </section>
           <section data-transition="convex">
             <img data-src="images/manipulation_services_result.png" class="screenshot" alt="Results of changing a menu tab by using a custom service." />
-            <p class="caption">Drupal will use custom version of menu service to now build all menus. Will hit logic to change the 'Services' menu tab in the main menu..</p>
+            <p class="caption">Drupal will use custom version of menu service to now build all menus. Will hit logic to change the 'Services' menu tab in the main menu.</p>
           </section>
         </section>
         <section>
@@ -757,7 +772,7 @@ function subbartik_preprocess_menu__main(&$variables) {
             <h1>Slides & Notes</h1>
             <a href="https://bit.ly/bioFlex" target="_blank">bit.ly/bioFlex</a>
             <p class="filename">This presentation</p><br />
-            <a href="https://bit.ly/bioFlex" target="_blank">bit.ly/bioFlexSlides</a>
+            <a href="https://bit.ly/bioFlexSlides" target="_blank">bit.ly/bioFlexSlides</a>
             <p class="filename">Annotated slides on Slideshare.</p><br />
             <a href="https://bit.ly/drupalREAD" target="_blank">bit.ly/drupalREAD</a>
             <p class="filename">Blog post on how to select modules.</p>
@@ -773,7 +788,7 @@ function subbartik_preprocess_menu__main(&$variables) {
           </section>
           <section>
             <h1>Thank You!</h1>
-            <p>Questions?</p>
+            <p>Feedback/Questions? <a href="https://twitter.com/mikemiles86" target="_blank">@mikemiles86</a></p>
           </section>
         </section>
 			</div>

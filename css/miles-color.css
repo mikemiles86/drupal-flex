@@ -17,7 +17,7 @@ body {
   background-repeat: no-repeat;
   background-size: 50%;
   background-position: bottom right;
-  background-image: url('../../images/background.png');
+  background-image: url('../images/background.png');
 }
 
 ::selection {
@@ -26,10 +26,6 @@ body {
 
 .step-note {
   color: #ddd !important;
-}
-
-.tldr strong {
-  color: #fff;
 }
 
 .reveal blockquote {
