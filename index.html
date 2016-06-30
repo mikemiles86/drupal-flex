@@ -168,11 +168,113 @@ _core:
             <h3>#3 Twig</h3>
             <p class="caption">Almost everything in Drupal is templated and HTML can be altered. Requires the use of a custom theme.</p>
           </section>
+          <section>
+            <img data-src="images/3_twig_1_inspect.png" />
+          </section>
+          <section>
+            <pre><code class="html line-numbers" data-trim data-highlight-lines="3-5,7,11">
+               &lt;!-- THEME DEBUG -->
+<!-- THEME HOOK: 'menu__main' -->
+<!-- FILE NAME SUGGESTIONS:
+   * menu--main.html.twig
+   x menu.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/classy/templates/navigation/menu.html.twig' -->
+<ul class="clearfix menu">
+<!-- // ... -->
+  <li class="menu-item">
+    <a href="/node/3" data-drupal-link-system-path="node/3">Twig</a>
+  </li>
+<!-- // ... -->
+</ul>
+&lt;!-- END OUTPUT from 'core/themes/classy/templates/navigation/menu.html.twig'
+            </code></pre>
+          </section>
+          <section>
+            <img data-src="images/3_twig_2_theme_files.png" />
+          </section>
+          <section>
+            <pre><code class="twig line-numbers" data-trim data-highlight-lines="7-12">
+{# ... #}
+  {% if items %}
+    {# ... #}
+    {% for item in items %}
+      {# ... #}
+      &lt;li{{ item.attributes.addClass(classes) }}>
+        {% if item.title == 'Twig' %}
+          {% set style = 'background:#0F0;color:#F00' %}
+          {{ link(item.title ~ ' Alt', item.url, { 'style': style }) }}
+        {% else %}
+          {{ link(item.title, item.url) }}
+        {% endif %}
+        {# ... #}
+      &lt;/li>
+    {% endfor %}
+    &lt;/ul>
+  {% endif %}
+            </code></pre>
+          </section>
+          <section>
+            <img data-src="images/3_twig_3_enable_theme.gif" />
+          </section>
+          <section>
+            <img data-src="images/3_twig_result_highlight.png" />
+          </section>
+          <section>
+            <ul>
+              <li class="fragment">Almost everything in Drupal is templated</li>
+              <li class="fragment">Make changes by altering HTML/Twig</li>
+              <li class="fragment">Requires a custom theme</li>
+            </ul>
+          </section>
         </section>
         <section>
           <section data-background-image="images/crayons.jpg" data-credit="https://pixabay.com/en/crayons-colors-school-drawing-879974/" data-background-size="100%" data-background-position="middle">
             <h3>#4 CSS</h3>
             <p class="caption">Ability to target display of specific elements. Requires creating a library in a custom theme or module.</p>
+          </section>
+          <section>
+            <img data-src="images/4_css_1_files.png" />
+          </section>
+          <section>
+            <pre><code class="css line-numbers" data-trim>
+.menu--main .menu li:nth-child(4) a {
+    background: #0000FF;
+    color: #FFF;
+}
+            </code></pre>
+          </section>
+          <section>
+            <pre><code class="yml line-numbers" data-trim>
+              menu-alter:
+  version: VERSION
+  css:
+    component:
+      css/menu_alter.css: {}
+            </code></pre>
+          </section>
+          <section>
+            <pre><code class="yml line-numbers" data-trim data-highlight-lines="8,9">
+              name: Flex Theme
+type: theme
+description: An theme to demo the flexibility of Drupal 8.
+package: Core
+version: VERSION
+core: 8.x
+base theme: bartik
+libraries:
+   - flex_theme/menu-alter
+            </code></pre>
+          </section>
+          <section>
+            <img data-src="images/4_css_result_highlight.png" />
+          </section>
+          <section>
+            <ul>
+              <li class="fragment">Target specific page items</li>
+              <li class="fragment">Add using a theme or module</li>
+              <li class="fragment">Can only effect display</li>
+            </ul>
           </section>
         </section>
         <section>
@@ -180,11 +282,118 @@ _core:
             <h3>#5 JavaScript</h3>
             <p class="caption">Make changes based on user actions. Requires creating a library with a custom theme or module. Is dependent on user browser.</p>
           </section>
+          <section>
+            <img data-src="images/5_javascript_1_files.png" />
+          </section>
+          <section>
+            <pre><code class="js line-numbers" data-trim data-highlight-lines="6-11">
+              (function ($, Drupal) {
+  "use strict";
+  Drupal.behaviors.flexThemeMenuAlterMain = {
+    attach: function (context) {
+      $('.menu--main ul.menu li a').each(function(){
+        if ($(this).attr('href') == '/node/5') {
+          $(this).addClass('yellow-menu');
+          $(this).attr('style', 'color: #000;');
+          $(this).attr('target', '_blank');
+          $(this).text($(this).text() + Drupal.t(' Alt'));
+        }
+      });
+    }
+  }
+})(jQuery, Drupal);
+            </code></pre>
+          </section>
+          <section>
+            <pre><code class="css line-numbers" data-trim>
+              .yellow-menu {
+    background: #FFFF00;
+}
+            </code></pre>
+          </section>
+          <section>
+            <pre><code class="yml line-numbers" data-trim data-highlight-lines="6-16">
+              menu-alter:
+  version: VERSION
+  css:
+    component:
+      css/menu_alter.css: {}
+menu-alter-main:
+  version: VERSION
+  css:
+    component:
+      css/menu_alter_main.css: {}
+  js:
+    js/menu_alter_main.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+            </code></pre>
+          </section>
+          <section>
+            <pre><code class="twig line-numbers" data-trim data-highlight-lines="1">
+{{ attach_library('flex_theme/menu-alter-main') }}
+{# ... #}
+  {% if items %}
+    {# ... #}
+    {% for item in items %}
+      {# ... #}
+      &lt;li{{ item.attributes.addClass(classes) }}>
+        {% if item.title == 'Twig' %}
+          {% set style = 'background:#0F0;color:#F00' %}
+          {{ link(item.title ~ ' Alt', item.url, { 'style': style }) }}
+        {% else %}
+          {{ link(item.title, item.url) }}
+        {% endif %}
+        {# ... #}
+            </code></pre>
+          </section>
+          <section>
+            <img data-src="images/5_javascript_result_highlight.png" />
+          </section>
+          <section>
+            <ul>
+              <li class="fragment">Can make changes based on actions</li>
+              <li class="fragment">Control inclusion with a library</li>
+              <li class="fragment">Browser dependent</li>
+            </ul>
+          </section>
         </section>
         <section>
           <section data-background-image="images/hook.png" data-credit="https://commons.wikimedia.org/wiki/File:Captain_Hook.PNG" data-background-size="100%" data-background-position="middle">
             <h3>#6 Hooks</h3>
             <p class="caption">Change data to/from the server. Requires knowledge of Drupal process, php and a custom theme or module.</p>
+          </section>
+          <section>
+            <img data-src="images/6_hooks_1_files.png" />
+          </section>
+          <section>
+            <pre><code class="php line-numbers" data-trim data-highlight-lines="6-15">
+              // Implements hook_preprocess_HOOK().
+function flex_module_preprocess_menu__main(&$variables) {
+  // Loop through all menu tabs.
+  foreach ($variables['items'] as &$menu_tab) {
+    // Current tab pointing to node/6 ?
+    if ($menu_tab['url']->toString() == '/node/6') {
+      // Alter Title
+      $menu_tab['title'] .= ' Alt';
+      // Existing attributes?
+      $attributes = $menu_tab['url']->getOption('attributes');
+      // Add custom styling.
+      $attributes['style'] .= 'color:#FFF;background:#F00;';
+      // Add back modified attributes.
+      $menu_tab['url']->setOption('attributes', $attributes);
+    }
+  }
+}
+            </code></pre>
+          </section>
+          <section>
+            <img data-src="images/6_hooks_2_enable.gif" />
+          </section>
+          <section>
+            <img data-src="images/6_hooks_result_highlight.png" />
           </section>
         </section>
         <section>
