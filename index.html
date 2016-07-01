@@ -89,7 +89,7 @@
           <section data-background-image="images/before.png" data-background-size="100%" data-background-position="top">
             <h3>The Before</h3>
           </section>
-          <section>
+          <section data-background-image="images/after.png" data-background-size="100%" data-background-position="top">
             <h3>The After</h3>
           </section>
         </section>
@@ -101,10 +101,9 @@
           <section>
             <img data-src="images/1_core.gif" />
           </section>
-          <section>
-            <img data-src="images/1_core_result_highlight.png" />
+          <section data-background-image="images/1_core_result_highlight.png">
           </section>
-          <section>
+          <section data-background-image="images/1_core_result_blur.png">
             <ul>
               <li class="fragment">Requires little techincal knowledge.</li>
               <li class="fragment">Allows for "quick" changes.</li>
@@ -152,10 +151,9 @@ _core:
           <section>
             <img data-src="images/2_modules_4_alter.gif" />
           </section>
-          <section>
-            <img data-src="images/2_modules_result_highlight.png" />
+          <section data-background-image="images/2_modules_result_highlight.png">
           </section>
-          <section>
+          <section data-background-image="images/2_modules_result_blur.png">
             <ul>
               <li class="fragment">May Require some technical knowledge</li>
               <li class="fragment">Extends Core abilities</li>
@@ -217,10 +215,9 @@ _core:
           <section>
             <img data-src="images/3_twig_3_enable_theme.gif" />
           </section>
-          <section>
-            <img data-src="images/3_twig_result_highlight.png" />
+          <section data-background-image="images/3_twig_result_highlight.png">
           </section>
-          <section>
+          <section data-background-image="images/3_twig_result_blur.png">
             <ul>
               <li class="fragment">Almost everything in Drupal is templated</li>
               <li class="fragment">Make changes by altering HTML/Twig</li>
@@ -266,10 +263,9 @@ libraries:
    - flex_theme/menu-alter
             </code></pre>
           </section>
-          <section>
-            <img data-src="images/4_css_result_highlight.png" />
+          <section data-background-image="images/4_css_result_highlight.png">
           </section>
-          <section>
+          <section data-background-image="images/4_css_result_blur.png">
             <ul>
               <li class="fragment">Target specific page items</li>
               <li class="fragment">Add using a theme or module</li>
@@ -349,10 +345,9 @@ menu-alter-main:
         {# ... #}
             </code></pre>
           </section>
-          <section>
-            <img data-src="images/5_javascript_result_highlight.png" />
+          <section data-background-image="images/5_javascript_result_highlight.png" >
           </section>
-          <section>
+          <section data-background-image="images/5_javascript_result_blur.png" >
             <ul>
               <li class="fragment">Can make changes based on actions</li>
               <li class="fragment">Control inclusion with a library</li>
@@ -366,7 +361,26 @@ menu-alter-main:
             <p class="caption">Change data to/from the server. Requires knowledge of Drupal process, php and a custom theme or module.</p>
           </section>
           <section>
-            <img data-src="images/6_hooks_1_files.png" />
+            <img data-src="images/6_hooks_1_inspect.png" />
+          </section>
+          <section>
+            <pre><code class="html line-numbers" data-trim data-highlight-lines="2">
+              &lt;!-- THEME DEBUG -->
+<!-- THEME HOOK: 'menu__main' -->
+<!-- FILE NAME SUGGESTIONS:
+   X menu--main.html.twig
+   X menu--main.html.twig
+   * menu.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/flex_theme/templates/menu--main.html.twig' -->
+<ul class="clearfix menu">
+<!-- // ... -->
+</ul>
+&lt;!-- END OUTPUT from 'themes/flex_theme/templates/menu--main.html.twig'
+            </code></pre>
+          </section>
+          <section>
+            <img data-src="images/6_hooks_2_files.png" />
           </section>
           <section>
             <pre><code class="php line-numbers" data-trim data-highlight-lines="6-15">
@@ -390,10 +404,16 @@ function flex_module_preprocess_menu__main(&$variables) {
             </code></pre>
           </section>
           <section>
-            <img data-src="images/6_hooks_2_enable.gif" />
+            <img data-src="images/6_hooks_3_enable.gif" />
           </section>
-          <section>
-            <img data-src="images/6_hooks_result_highlight.png" />
+          <section data-background-image="images/6_hooks_result_highlight.png">
+          </section>
+          <section data-background-image="images/6_hooks_result_blur.png">
+            <ul>
+              <li class="fragment">Provided by Drupal core and modules</li>
+              <li class="fragment">Can be invoked by custom theme or module</li>
+              <li class="fragment">Requires PHP skillset</li>
+            </ul>
           </section>
         </section>
         <section>
@@ -401,11 +421,219 @@ function flex_module_preprocess_menu__main(&$variables) {
             <h3>#7 Services</h3>
             <p class="caption">Ability to replace core systems, without hacking core. Requires a custom module, Object Oriented PHP skillset and deep knowledge of Drupal. More long term maintence and security concerns.</p>
           </section>
+          <section>
+            <img data-src="images/7_services_1_files.png" />
+          </section>
+          <section>
+            <pre><code class="php line-numbers" data-trim data-highlight-lines="6,10,12,13">
+              namespace Drupal\flex_module;
+
+use Drupal\Core\DependencyInjection\ServiceProviderBase;
+use Drupal\Core\DependencyInjection\ContainerBuilder;
+
+class FlexModuleServiceProvider extends ServiceProviderBase {
+  /**
+   * {@inheritdoc}
+   */
+  public function alter(ContainerBuilder $container) {
+    // Override menu_link_tree class with custom.
+    $definition = $container->getDefinition('menu.link_tree');
+    $definition->setClass('Drupal\flex_module\FlexModuleMenuLinkTree');
+  }
+}
+            </code></pre>
+          </section>
+          <section>
+            <pre><code class="php line-numbers" data-trim data-highlight-lines="4,6-11,13-19">
+              namespace Drupal\flex_module;
+use Drupal\Core\Menu\MenuLinkTree;
+
+class FlexModuleMenuLinkTree extends MenuLinkTree {
+  // Overrides \Drupal\Core\Menu\MenuLinkTree::build().
+  public function build(array $tree) {
+    $build = parent::build($tree);
+    if (isset($build['#items']) && $build['#theme'] == 'menu__main') {
+      $n = 0;
+      foreach ($build['#items'] as &$item ) {
+        if (++$n == 8) {
+          // Change Title, path and add styling.
+          $item['title'] .= ' Alt';
+          $item['url']->setOption('attributes', array(
+            'style' => 'color:#00F;background:#FFA500;',
+          ));
+        }
+      }
+    }
+    return $build;
+  }
+}
+            </code></pre>
+          </section>
+          <section data-background-image="images/7_services_result_highlight.png" >
+          </section>
+          <section data-background-image="images/7_services_result_blur.png" >
+            <ul>
+              <li class="fragment">Ability to control core systems</li>
+              <li class="fragment">Require custom module</li>
+              <li class="fragment">Require advance OOP PHP skillset</li>
+            </ul>
+          </section>
         </section>
         <section>
           <section data-background-image="images/planet.gif" data-credit="http://gifsoup.com/view/4515088/captain-planet-powers-combined.html" data-background-size="100%" data-background-position="middle">
             <h3>#8 Combinations</h3>
             <p class="caption">Real world scenario, a combination of multiple methods. Requires multiple skillsets, but provides most control over Drupal.</p>
+          </section>
+          <section>
+            <pre><code class="php line-numbers" data-trim data-highlight-lines="12-14">
+              namespace Drupal\flex_module;
+use Drupal\Core\Menu\MenuLinkTree;
+
+class FlexModuleMenuLinkTree extends MenuLinkTree {
+  // Overrides \Drupal\Core\Menu\MenuLinkTree::build().
+  public function build(array $tree) {
+    $build = parent::build($tree);
+    if (isset($build['#items']) && $build['#theme'] == 'menu__main') {
+      $n = 0;
+      foreach ($build['#items'] as &$item ) {
+        // ...
+        if ($item['url']->toString() == '/node/8') {
+          $item['title'] .= ' Alt';
+        }
+      }
+    }
+    return $build;
+  }
+}
+            </code></pre>
+          </section>
+          <section>
+            <pre><code class="php line-numbers" data-trim data-highlight-lines="3,4,11">
+              // Implements hook_preprocess_HOOK().
+function flex_module_preprocess_menu__main(&$variables) {
+  $size = count($variables['items']);
+  $m = 1;
+  // Loop through all menu tabs.
+  foreach ($variables['items'] as &$menu_tab) {
+    // Current tab pointing to node/6 ?
+    if ($menu_tab['url']->toString() == '/node/6') {
+      // ...
+    }
+    $menu_tab['is_combo'] = ($m++ == $size);
+  }
+}
+            </code></pre>
+          </section>
+          <section>
+            <pre><code class="js line-numbers" data-trim data-highlight-lines="7-9  ">
+              (function ($, Drupal) {
+  "use strict";
+  Drupal.behaviors.flexThemeMenuAlterMain = {
+    attach: function (context) {
+      $('.menu--main ul.menu li a').each(function(){
+        // ...
+        if ($(this).data('combo') == 1) {
+          $(this).addClass('combo-item');
+        }
+      });
+    }
+  }
+})(jQuery, Drupal);
+            </code></pre>
+          </section>
+          <section>
+            <pre><code class="css line-numbers" data-trim>
+              .menu--main .menu li a.combo-item {
+    color: #000;
+    font-weight: 800;
+    text-shadow: 0 0 #000 !important;
+    background: red; /* not working, let's see some red */
+    background: -moz-linear-gradient( top ,
+    rgba(255, 0, 0, 1) 0%,
+    rgba(255, 255, 0, 1) 15%,
+    rgba(0, 255, 0, 1) 30%,
+    rgba(0, 255, 255, 1) 50%,
+    rgba(0, 0, 255, 1) 65%,
+    rgba(255, 0, 255, 1) 80%,
+    rgba(255, 0, 0, 1) 100%);
+    background: -webkit-gradient(linear,  left top,  left bottom,
+    color-stop(0%, rgba(255, 0, 0, 1)),
+    color-stop(15%, rgba(255, 255, 0, 1)),
+    color-stop(30%, rgba(0, 255, 0, 1)),
+    color-stop(50%, rgba(0, 255, 255, 1)),
+    color-stop(65%, rgba(0, 0, 255, 1)),
+    color-stop(80%, rgba(255, 0, 255, 1)),
+    color-stop(100%, rgba(255, 0, 0, 1)));
+}
+            </code></pre>
+          </section>
+          <section>
+            <pre><code class="twig line-numbers" data-trim data-highlight-lines="8-12">
+               &lt;ul class="menu">
+{% endif %}
+{% for item in items %}
+  {# ... #}
+  &lt;li{{ item.attributes.addClass(classes) }}>
+    {% if item.title == 'Twig' %}
+      {# ... #}
+    {% elseif item.is_combo %}
+        {{ link(item.title | reverse, item.url) }}
+    {% else %}
+      {{ link(item.title, item.url) }}
+    {% endif %}
+    {# ... #}
+  &lt/li>
+{% endfor %}
+&lt;/ul>
+            </code></pre>
+          </section>
+          <section>
+            <pre><code class="twig line-numbers" data-trim data-highlight-lines="14-19">
+              attributes:
+  class:
+    label: ''
+    description: ''
+  target:
+    label: ''
+    description: ''
+    options:
+      _blank: 'New window (_blank)'
+      _self: 'Same window (_self)'
+  style:
+    label: ''
+    description: ''
+  data-combo:
+    label: 'Combo Item'
+    description: 'Is this a combo menu item?'
+    options:
+      0: 'No'
+      1: 'Yes'
+_core:
+  default_config_hash: 9nRDOclwSlz2Os9mJXM1LXNbV2q-bADV0zipiWPXymk
+            </code></pre>
+          </section>
+          <section>
+            <img data-src="images/8_combo_1_attribute.gif" />
+          </section>
+          <section data-background-image="images/8_combo_result_highlight.png">
+          </section>
+          <section data-background-image="images/8_combo_result_blur.png">
+            <ul>
+              <li class="fragment">Real world scenario</li>
+              <li class="fragment">Ultimate control over Drupal</li>
+              <li class="fragment">Utilize available skillsets</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>What did we Prove?</h2>
+            <p class="fragment">Drupal is flexible</p>
+          </section>
+          <section>
+            <h2>What does this Mean?</h2>
+            <p class="fragment">When client asks <em>"Can Drupal do X?"</em></p>
+            <p class="fragment"><strong>YES! </strong><span class="fragment">if...</span></p>
           </section>
         </section>
         <!-- Resources, Feedback & Thanks //-->
