@@ -12,7 +12,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/code.css">
+    <link rel="stylesheet" href="css/custom.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -52,7 +55,7 @@
         <!-- Body //-->
         <section>
           <section data-background-image="images/taffy_pull.gif">
-            <h2>What is Flexibility?</h2>
+              <h2 class="overlay-text">What is Flexibility?</h2>
             <aside class="notes">
               <ul>
                 <li>engineering def.</li>
@@ -86,17 +89,19 @@
           <section>
             <h2>The Demo</h2>
           </section>
-          <section data-background-image="images/before.png" data-background-size="100%" data-background-position="top">
-            <h3>The Before</h3>
+          <section data-background-image="images/before.png" data-background-position="top left">
+            <h3 class="overlay-text">The Before</h3>
           </section>
-          <section data-background-image="images/after.png" data-background-size="100%" data-background-position="top">
-            <h3>The After</h3>
+          <section data-background-image="images/after.png" data-background-size="100%" >
+            <h3 class="overlay-text">The After</h3>
           </section>
         </section>
         <section>
-          <section data-background-image="images/buttons-to-push.jpg" data-background-size="100%" data-background-position="middle" data-credit="http://www.publicdomainpictures.net/view-image.php?image=91272&picture=buttons-to-push">
+          <section data-background-image="images/buttons-to-push.jpg" data-credit="http://www.publicdomainpictures.net/view-image.php?image=91272&picture=buttons-to-push">
+            <div class="overlay-text">
             <h3>#1 Drupal Core</h3>
-            <p class="caption">Generally requires less technical/Drupal knowledge. But flexiblity is limited. The "push buttons" method</p>
+              <p class="caption">Generally requires less technical/Drupal knowledge. But flexiblity is limited. The "push buttons" method</p>
+          </div>
           </section>
           <section>
             <img data-src="images/1_core.gif" />
@@ -104,17 +109,21 @@
           <section data-background-image="images/1_core_result_highlight.png">
           </section>
           <section data-background-image="images/1_core_result_blur.png">
+            <div class="fragment fade-in overlay-text">
             <ul>
-              <li class="fragment">Requires little techincal knowledge.</li>
+              <li class="fragment" data-fragment-index="1">Requires little techincal knowledge.</li>
               <li class="fragment">Allows for "quick" changes.</li>
               <li class="fragment">Very limited changes.</li>
             </ul>
+          </div>
           </section>
         </section>
         <section>
-          <section data-background-image="images/floppy-disks.jpg" data-background-size="100%" data-background-position="middle" data-credit="http://www.publicdomainpictures.net/view-image.php?image=14549&picture=floppy-disks">
-            <h3>#2 Modules</h3>
-            <p class="caption">Extends Drupal core and there are plenty of contrib modules available. If can't find one, build one (if have development knowledge). Requires more maintence.</p>
+          <section data-background-image="images/floppy-disks.jpg" data-credit="http://www.publicdomainpictures.net/view-image.php?image=14549&picture=floppy-disks">
+            <div class="overlay-text">
+              <h3>#2 Modules</h3>
+              <p class="caption">Extends Drupal core and there are plenty of contrib modules available. If can't find one, build one (if have development knowledge). Requires more maintence.</p>
+            </div>
           </section>
           <section>
             <img data-src="images/2_modules_1_module.png" />
@@ -154,17 +163,21 @@ _core:
           <section data-background-image="images/2_modules_result_highlight.png">
           </section>
           <section data-background-image="images/2_modules_result_blur.png">
+            <div class="fragment fade-in overlay-text" data-fragment-index="1">
             <ul>
-              <li class="fragment">May Require some technical knowledge</li>
+              <li class="fragment" data-fragment-index="1">May Require some technical knowledge</li>
               <li class="fragment">Extends Core abilities</li>
               <li class="fragment">Requires long term maintence</li>
             </ul>
+          </div>
           </section>
         </section>
         <section>
-          <section data-background-image="images/grass.jpg" data-credit="https://pixabay.com/en/grass-green-nature-plant-meadow-534873/" data-background-size="100%" data-background-position="middle">
-            <h3>#3 Twig</h3>
-            <p class="caption">Almost everything in Drupal is templated and HTML can be altered. Requires the use of a custom theme.</p>
+          <section data-background-image="images/grass.jpg" data-credit="https://pixabay.com/en/grass-green-nature-plant-meadow-534873/">
+            <div class="overlay-text">
+              <h3>#3 Twig</h3>
+              <p class="caption">Almost everything in Drupal is templated and HTML can be altered. Requires the use of a custom theme.</p>
+            </div>
           </section>
           <section>
             <img data-src="images/3_twig_1_inspect.png" />
@@ -218,17 +231,21 @@ _core:
           <section data-background-image="images/3_twig_result_highlight.png">
           </section>
           <section data-background-image="images/3_twig_result_blur.png">
-            <ul>
-              <li class="fragment">Almost everything in Drupal is templated</li>
-              <li class="fragment">Make changes by altering HTML/Twig</li>
-              <li class="fragment">Requires a custom theme</li>
-            </ul>
+            <div class="fragment fade-in overlay-text" data-fragment-index="1">
+              <ul>
+                <li class="fragment" data-fragment-index="1">Almost everything in Drupal is templated</li>
+                <li class="fragment">Make changes by altering HTML/Twig</li>
+                <li class="fragment">Requires a custom theme</li>
+              </ul>
+            </div>
           </section>
         </section>
         <section>
-          <section data-background-image="images/crayons.jpg" data-credit="https://pixabay.com/en/crayons-colors-school-drawing-879974/" data-background-size="100%" data-background-position="middle">
-            <h3>#4 CSS</h3>
-            <p class="caption">Ability to target display of specific elements. Requires creating a library in a custom theme or module.</p>
+          <section data-background-image="images/crayons.jpg" data-credit="https://pixabay.com/en/crayons-colors-school-drawing-879974/">
+            <div class="overlay-text">
+              <h3>#4 CSS</h3>
+              <p class="caption">Ability to target display of specific elements. Requires creating a library in a custom theme or module.</p>
+            </div>
           </section>
           <section>
             <img data-src="images/4_css_1_files.png" />
@@ -266,17 +283,21 @@ libraries:
           <section data-background-image="images/4_css_result_highlight.png">
           </section>
           <section data-background-image="images/4_css_result_blur.png">
-            <ul>
-              <li class="fragment">Target specific page items</li>
-              <li class="fragment">Add using a theme or module</li>
-              <li class="fragment">Can only effect display</li>
-            </ul>
+            <div class="fragment fade-in overlay-text" data-fragment-index="1">
+              <ul>
+                <li class="fragment" data-fragment-index="1">Target specific page items</li>
+                <li class="fragment">Add using a theme or module</li>
+                <li class="fragment">Can only effect display</li>
+              </ul>
+            </div>
           </section>
         </section>
         <section>
-          <section data-background-image="images/clapperboard.jpg" data-credit="modified;https://en.wikipedia.org/wiki/Clapperboard#/media/File:Clapperboard,_O2_film,_September_2008.jpg" data-background-size="100%" data-background-position="middle">
-            <h3>#5 JavaScript</h3>
-            <p class="caption">Make changes based on user actions. Requires creating a library with a custom theme or module. Is dependent on user browser.</p>
+          <section data-background-image="images/clapperboard.jpg" data-credit="modified;https://en.wikipedia.org/wiki/Clapperboard#/media/File:Clapperboard,_O2_film,_September_2008.jpg">
+            <div class="overlay-text">
+              <h3>#5 JavaScript</h3>
+              <p class="caption">Make changes based on user actions. Requires creating a library with a custom theme or module. Is dependent on user browser.</p>
+            </div>
           </section>
           <section>
             <img data-src="images/5_javascript_1_files.png" />
@@ -348,17 +369,21 @@ menu-alter-main:
           <section data-background-image="images/5_javascript_result_highlight.png" >
           </section>
           <section data-background-image="images/5_javascript_result_blur.png" >
-            <ul>
-              <li class="fragment">Can make changes based on actions</li>
-              <li class="fragment">Control inclusion with a library</li>
-              <li class="fragment">Browser dependent</li>
-            </ul>
+            <div class="fragment fade-in overlay-text" data-fragment-index="1">
+              <ul>
+                <li class="fragment" data-fragment-index="1">Can make changes based on actions</li>
+                <li class="fragment">Control inclusion with a library</li>
+                <li class="fragment">Browser dependent</li>
+              </ul>
+            </div>
           </section>
         </section>
         <section>
-          <section data-background-image="images/hook.png" data-credit="https://commons.wikimedia.org/wiki/File:Captain_Hook.PNG" data-background-size="100%" data-background-position="middle">
-            <h3>#6 Hooks</h3>
-            <p class="caption">Change data to/from the server. Requires knowledge of Drupal process, php and a custom theme or module.</p>
+          <section data-background-image="images/hook.png" data-credit="https://commons.wikimedia.org/wiki/File:Captain_Hook.PNG">
+            <div class="overlay-text">
+              <h3>#6 Hooks</h3>
+              <p class="caption">Change data to/from the server. Requires knowledge of Drupal process, php and a custom theme or module.</p>
+            </div>
           </section>
           <section>
             <img data-src="images/6_hooks_1_inspect.png" />
@@ -409,17 +434,21 @@ function flex_module_preprocess_menu__main(&$variables) {
           <section data-background-image="images/6_hooks_result_highlight.png">
           </section>
           <section data-background-image="images/6_hooks_result_blur.png">
-            <ul>
-              <li class="fragment">Provided by Drupal core and modules</li>
-              <li class="fragment">Can be invoked by custom theme or module</li>
-              <li class="fragment">Requires PHP skillset</li>
-            </ul>
+            <div class="fragment fade-in overlay-text" data-fragment-index="1">
+              <ul>
+                <li class="fragment" data-fragment-index="1">Provided by Drupal core and modules</li>
+                <li class="fragment">Can be invoked by custom theme or module</li>
+                <li class="fragment">Requires PHP skillset</li>
+              </ul>
+            </div>
           </section>
         </section>
         <section>
-          <section data-background-image="images/racecar.gif" data-credit="http://cheezburger.com/8361556992" data-background-size="100%" data-background-position="middle">
-            <h3>#7 Services</h3>
-            <p class="caption">Ability to replace core systems, without hacking core. Requires a custom module, Object Oriented PHP skillset and deep knowledge of Drupal. More long term maintence and security concerns.</p>
+          <section data-background-image="images/racecar.gif" data-credit="http://cheezburger.com/8361556992">
+            <div class="overlay-text">
+              <h3>#7 Services</h3>
+              <p class="caption">Ability to replace core systems, without hacking core. Requires a custom module, Object Oriented PHP skillset and deep knowledge of Drupal. More long term maintence and security concerns.</p>
+            </div>
           </section>
           <section>
             <img data-src="images/7_services_1_files.png" />
@@ -472,17 +501,21 @@ class FlexModuleMenuLinkTree extends MenuLinkTree {
           <section data-background-image="images/7_services_result_highlight.png" >
           </section>
           <section data-background-image="images/7_services_result_blur.png" >
-            <ul>
-              <li class="fragment">Ability to control core systems</li>
-              <li class="fragment">Require custom module</li>
-              <li class="fragment">Require advance OOP PHP skillset</li>
-            </ul>
+            <div class="fragment fade-in overlay-text" data-fragment-index="1">
+              <ul>
+                <li class="fragment" data-fragment-index="1">Ability to control core systems</li>
+                <li class="fragment">Require custom module</li>
+                <li class="fragment">Require advance OOP PHP skillset</li>
+              </ul>
+            </div>
           </section>
         </section>
         <section>
-          <section data-background-image="images/planet.gif" data-credit="http://gifsoup.com/view/4515088/captain-planet-powers-combined.html" data-background-size="100%" data-background-position="middle">
-            <h3>#8 Combinations</h3>
-            <p class="caption">Real world scenario, a combination of multiple methods. Requires multiple skillsets, but provides most control over Drupal.</p>
+          <section data-background-image="images/planet.gif" data-credit="http://gifsoup.com/view/4515088/captain-planet-powers-combined.html" data-background-position="middle">
+            <div class="overlay-text">
+              <h3>#8 Combinations</h3>
+              <p class="caption">Real world scenario, a combination of multiple methods. Requires multiple skillsets, but provides most control over Drupal.</p>
+            </div>
           </section>
           <section>
             <pre><code class="php line-numbers" data-trim data-highlight-lines="12-14">
@@ -618,22 +651,19 @@ _core:
           <section data-background-image="images/8_combo_result_highlight.png">
           </section>
           <section data-background-image="images/8_combo_result_blur.png">
-            <ul>
-              <li class="fragment">Real world scenario</li>
-              <li class="fragment">Ultimate control over Drupal</li>
-              <li class="fragment">Utilize available skillsets</li>
-            </ul>
+            <div class="fragment fade-in overlay-text" data-fragment-index="1">
+              <ul>
+                <li class="fragment" data-fragment-index="1">Real world scenario</li>
+                <li class="fragment">Ultimate control over Drupal</li>
+                <li class="fragment">Utilize available skillsets</li>
+              </ul>
+            </div>
           </section>
         </section>
         <section>
           <section>
-            <h2>What did we Prove?</h2>
-            <p class="fragment">Drupal is flexible</p>
-          </section>
-          <section>
-            <h2>What does this Mean?</h2>
-            <p class="fragment">When client asks <em>"Can Drupal do X?"</em></p>
-            <p class="fragment"><strong>YES! </strong><span class="fragment">if...</span></p>
+            <h2>What did we Learn?</h2>
+            <p class="fragment">Drupal is flexible!</p>
           </section>
         </section>
         <!-- Resources, Feedback & Thanks //-->
@@ -655,13 +685,15 @@ _core:
 			</div>
       <div class="footer">
         <span class="footer-conference">
-          Drupalcon
+          <img src="images/conf_logo.png" class="footer-logo conference-logo" />
+          #NYCCamp
         </span>
         <span class="footer-company">
+          <img src="images/company_logo.png" class="footer-logo company-logo" />
           Genuine
         </span>
         <span class="footer-info">
-          Mike / Mike
+          Drupal Flex / Mike Miles
         </span>
       </div>
     </div>
