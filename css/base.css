@@ -12,6 +12,7 @@
     display: inline-block;
     clear: both;
     z-index: 1000;
+    vertical-align: top !important;
 }
 .footer-conference {
     font-size: 100%;
@@ -33,4 +34,9 @@
     display: inline-block;
     padding-right:2%;
     font-size: 100%;
+}
+
+.footer img {
+    height: 40px;
+    vertical-align:sub;
 }

@@ -31,7 +31,7 @@
 	</head>
 	<body>
 		<div class="reveal">
-			<div class="slides">
+			<div class="slides" data-skip-types="online">
         <!-- Title & About //-->
 				<section>
           <section>
@@ -45,9 +45,9 @@
             <p>All the internet places: <a href="//twitter.com/mikemiles86" target="_blank">mikemiles86</a></p>
             <aside class="notes">
               <ul>
-                <li>You and your exp.</li>
-                <li>Who is Genuine & depts.</li>
-                <li>UX, Des, Strat, Dev. CHI, NYC, BOS, SF</li>
+                <li>Location, Experience, Role in Bos</li>
+                <li>What is, what does, award #6</li>
+                <li>Loc: SF, CHI, BOS, NYC</li>
               </ul>
             </aside>
           </section>
@@ -55,28 +55,45 @@
         <!-- Body //-->
         <section>
           <section data-background-image="images/taffy_pull.gif">
-              <h2 class="overlay-text">What is Flexibility?</h2>
+            <h2 class="overlay-text">What is Flexibility?</h2>
             <aside class="notes">
               <ul>
-                <li>engineering def.</li>
-                <li>Jim Brown, 1984</li>
-                <li>
-                  <p>many deffinitions</p>
-                  <p>in engineering what it means</p>
-                  <p>many different types of flex</p>
-                  <p>"Classification of flexible manufacturing systems - Jim Brown. 1984</p>
-                  https://deepblue.lib.umich.edu/bitstream/handle/2027.42/35438/b1407223.0001.001.txt?sequence=1&isAllowed=y
-                </li>
+                <li>Ambiguous term.</li>
+                <li>In engineering many deffs.</li>
+                <li>Jim Browne, 1984 @ U of M</li>
+                <li>TYPES OF FLEXIBILITIES AND CLASSIFICATION OF
+FLEXIBLE MANUFACTURING SYSTEMS</li>
+                <li>8 sub types</li>
+              </ul>
+            </aside>
+          </section>
+          <section data-transition="convex">
+            <blockquote>
+              "Expansion Flexibility - The capability of building a system, and expanding it as needed,
+easily and modularly."
+<br />
+              <cite>- <a href="//deepblue.lib.umich.edu/bitstream/handle/2027.42/35438/b1407223.0001.001.txt?sequence=1&isAllowed=y%20" target="_blank">Jim Browne, 1984</a></cite>
+            </blockquote>
+            <aside class="notes">
+              <ul>
+                <li>This describes Drupal</li>
               </ul>
             </aside>
           </section>
           <section>
-            <h3>What makes Drupal Flexible</h3>
+            <h3>What makes Drupal Flexible?</h3>
+            <ul>
+              <li class="fragment">Decoupled nature</li>
+              <li class="fragment">Modular design</li>
+              <li class="fragment">Open source</li>
+            </ul>
             <aside class="notes">
-              <p>Drupal: operational flex, expansion flexibility, market flex</p>
+              <li>Seperation between layers and systems</li>
+              <li>Swappable, pluggable componsnets to alter Drupal</li>
+              <li>Extendable and customizable</li>
             </aside>
           </section>
-          <section>
+          <section data-transition="convex">
             <h3>Three Areas of Manipulation</h3>
             <ul>
               <li class="fragment">The Interface</li>
@@ -84,32 +101,60 @@
               <li class="fragment">Data/System Layer</li>
             </ul>
           </section>
+          <section data-transition="convex">
+            <h3>Why this is important</h3>
+            <ul>
+              <li class="fragment">Can make Drupal do what you want</li>
+              <li class="fragment">No "right way", just the "right for me" way</li>
+              <li class="fragment">Adjust for skillsets, time and budget</li>
+            </ul>
+          </section>
         </section>
         <section>
           <section>
             <h2>The Demo</h2>
+            <ul>
+              <li>Drupal 8.1.3</li>
+              <li>Standard Install Profile</li>
+            </ul>
           </section>
-          <section data-background-image="images/before.png" data-background-position="top left">
+          <section data-transition="convex" data-skip="print,online" data-background-image="images/before.png" data-background-position="top left">
             <h3 class="overlay-text">The Before</h3>
           </section>
-          <section data-background-image="images/after.png" data-background-size="100%" >
+          <section data-transition="convex" data-skip="live">
+            <h3>The Before</h3>
+            <img data-src="images/before.png" alt="Plain Drupal 8 site before manipulations" />
+            <p class="caption">A plain Drupal 8 install with menu menu links before manipulation.</p>
+          </section>
+          <section data-transition="convex" data-skip="print,online" data-background-image="images/after.png" data-background-position="top left">
             <h3 class="overlay-text">The After</h3>
+          </section>
+          <section data-transition="convex" data-skip="live">
+            <h3>The After</h3>
+            <img data-src="images/after.png" alt="Drupal 8 with menu after manipulations." />
+            <p class="caption">Drupal 8 main menu after demostrating manipulation methods.</p>
           </section>
         </section>
         <section>
-          <section data-background-image="images/buttons-to-push.jpg" data-credit="http://www.publicdomainpictures.net/view-image.php?image=91272&picture=buttons-to-push">
+          <section data-transition="convex" data-background-image="images/buttons-to-push.jpg" data-credit="http://www.publicdomainpictures.net/view-image.php?image=91272&picture=buttons-to-push">
             <div class="overlay-text">
-            <h3>#1 Drupal Core</h3>
-              <p class="caption">Generally requires less technical/Drupal knowledge. But flexiblity is limited. The "push buttons" method</p>
-          </div>
+              <h3>#1 Drupal Core</h3>
+              <p class="caption">Using only core generally requires less technical/Drupal knowledge. But flexiblity is limited in capabilities. The "push buttons" method.</p>
+            </div>
           </section>
-          <section>
-            <img data-src="images/1_core.gif" />
+          <section data-transition="convex">
+            <img data-skip="print" data-src="images/1_core.gif" alt="Using Drupal core to edit a main menu link" />
+            <img data-skip="present" data-src="images/1_core.png" alt="Using Drupal core to edit a main menu link" />
+            <p class="caption">Use Drupal core to edit a main menu link. Limited to changing the title and the destination.</p>
           </section>
-          <section data-background-image="images/1_core_result_highlight.png">
+          <section data-transition="convex" data-skip="print,online" data-background-image="images/1_core_result.png">
           </section>
-          <section data-background-image="images/1_core_result_blur.png">
-            <div class="fragment fade-in overlay-text">
+          <section data-transition="convex" data-skip="live">
+            <img data-src="images/1_core_result_highlight.png" alt="The first menu link has been altered using only Drupal core" />
+            <p class="caption">The first menu link has been altered using only Drupal core.</p>
+          </section>
+          <section data-transition="convex" data-skip="print,online" data-background-image="images/1_core_result_blur.png">
+            <div data-fragment-index="1" class="fragment fade-in overlay-text">
             <ul>
               <li class="fragment" data-fragment-index="1">Requires little techincal knowledge.</li>
               <li class="fragment">Allows for "quick" changes.</li>
@@ -117,27 +162,41 @@
             </ul>
           </div>
           </section>
+          <section data-transition="convex" data-skip="live">
+            <h3>Using Drupal core</h3>
+            <ul>
+              <li>Requires little techincal knowledge.</li>
+              <li>Allows for "quick" changes.</li>
+              <li>Very limited changes.</li>
+            </ul>
+          </section>
         </section>
         <section>
-          <section data-background-image="images/floppy-disks.jpg" data-credit="http://www.publicdomainpictures.net/view-image.php?image=14549&picture=floppy-disks">
+          <section data-transition="convex" data-background-image="images/floppy-disks.jpg" data-credit="http://www.publicdomainpictures.net/view-image.php?image=14549&picture=floppy-disks">
             <div class="overlay-text">
               <h3>#2 Modules</h3>
-              <p class="caption">Extends Drupal core and there are plenty of contrib modules available. If can't find one, build one (if have development knowledge). Requires more maintence.</p>
+              <p class="caption">Extends Drupal core and there are plenty of contrib modules available. If you can't find one, build one (if you have the skillset to do so).</p>
             </div>
           </section>
-          <section>
-            <img data-src="images/2_modules_1_module.png" />
+          <section data-transition="convex">
+            <img data-src="images/2_modules_1_module.png" alt="Look on drupal.org for modules that meet your needs" />
+            <p class="caption">Look for modules on Drupal.org to see if there is one that meets your needs. Found the Menu Links Attributes module for Drupal 8.</p>
           </section>
-          <section>
-            <img data-src="images/2_modules_2_drush.gif" />
+          <section data-transition="convex">
+            <img data-skip="print" data-src="images/2_modules_2_enable.gif" alt="Use drupal core to enable module." />
+            <img data-skip="present" data-src="images/2_modules_2_enable.png" alt="User drupal core to enable module." />
+            <p class="caption">Many ways to download and enable modules. Will use the core interface to enable the Menu Links Attributes module after downloading.</p>
           </section>
-          <section>
-            <img data-src="images/2_modules_3_configure.gif" />
+          <section data-transition="convex">
+            <img data-skip="print" data-src="images/2_modules_3_configure.gif" alt="More editable attributes for a menu link" />
+            <img data-skip="present" data-src="images/2_modules_3_edit.png" alt="More editable attributes for a menu link" />
+            <p class="caption">When editing a menu link, now have more attributes available to set.</p>
           </section>
-          <section>
-            <img data-src="images/2_modules_3_configure.png" />
+          <section data-transition="convex">
+            <img data-src="images/2_modules_3_configure.png" alt="Menu Link Attributes require technical knowledge to change." />
+            <p class="caption">Menu Links Attributes module requires some technial (YAML) knowledge to customize</p>
           </section>
-          <section>
+          <section data-transition="convex">
             <pre><code class="yaml line-numbers" data-trim data-highlight-lines="11-13">
               attributes:
   class:
@@ -156,20 +215,35 @@ _core:
   default_config_hash: 9nRDOclwSlz2Os9mJXM1LXNbV2q-bADV0zipiWPXymk
 
             </code></pre>
+            <p class="caption">Add a new configurable 'style' attribute (lines 11-13) to the YAML</p>
           </section>
-          <section>
-            <img data-src="images/2_modules_4_alter.gif" />
+          <section data-transition="convex">
+            <img data-skip="print" data-src="images/2_modules_4_alter.gif" alt="Now able to add inline style to menu link" />
+            <img data-skip="present" data-src="images/2_modules_4_alter.png" alt="Now able to add inline style to menu link" />
+            <p class="caption">After saving configuration, now able to add inline style to menu links</p>
           </section>
-          <section data-background-image="images/2_modules_result_highlight.png">
+          <section data-transition="convex" data-skip="online,print" data-background-image="images/2_modules_result.png">
           </section>
-          <section data-background-image="images/2_modules_result_blur.png">
+          <section data-transition="convex" data-skip="live">
+            <img data-src="images/2_modules_result_highlight.png" alt="Main menu link altered using a module." />
+            <p class="caption">Using a contrib module allowed for altering the style of the "Modules" main menu link.</p>
+          </section>
+          <section data-skip="print,online" data-transition="fade" data-background-image="images/2_modules_result_blur.png">
             <div class="fragment fade-in overlay-text" data-fragment-index="1">
+              <ul>
+                <li class="fragment" data-fragment-index="1">Extended Core abilities</li>
+                <li class="fragment">Required some technical knowledge</li>
+                <li class="fragment">Limited based on what module offers</li>
+              </ul>
+            </div>
+          </section>
+          <section data-skip="live" data-transition="convex">
+            <h3>Using a contrib module</h3>
             <ul>
-              <li class="fragment" data-fragment-index="1">May Require some technical knowledge</li>
-              <li class="fragment">Extends Core abilities</li>
-              <li class="fragment">Requires long term maintence</li>
+              <li class="fragment">Extended core abilities</li>
+              <li class="fragment">Required some technical knowledge</li>
+              <li class="fragment">Limited based on what module offers</li>
             </ul>
-          </div>
           </section>
         </section>
         <section>
@@ -179,10 +253,11 @@ _core:
               <p class="caption">Almost everything in Drupal is templated and HTML can be altered. Requires the use of a custom theme.</p>
             </div>
           </section>
-          <section>
-            <img data-src="images/3_twig_1_inspect.png" />
+          <section data-transition="convex">
+            <img data-src="images/3_twig_1_inspect.png" alt="Use debug tools to learn which templates to alter." />
+            <p class="caption">Can use Twig debug to learn which template the main menu uses.</p>
           </section>
-          <section>
+          <section data-transition="convex">
             <pre><code class="html line-numbers" data-trim data-highlight-lines="3-5,7,11">
                &lt;!-- THEME DEBUG -->
 <!-- THEME HOOK: 'menu__main' -->
@@ -200,11 +275,13 @@ _core:
 </ul>
 &lt;!-- END OUTPUT from 'core/themes/classy/templates/navigation/menu.html.twig'
             </code></pre>
+            <p class="caption">Twig debug tells the available template names to override current template.</p>
           </section>
-          <section>
-            <img data-src="images/3_twig_2_theme_files.png" />
+          <section data-transition="convex">
+            <img data-src="images/3_twig_2_theme_files.png" alt="Create a custom theme to override template" />
+            <p class="caption">Create a custom theme (flex_theme), to override the menu--main.html.twig template.</p>
           </section>
-          <section>
+          <section data-transition="convex">
             <pre><code class="twig line-numbers" data-trim data-highlight-lines="7-12">
 {# ... #}
   {% if items %}
@@ -223,21 +300,38 @@ _core:
     {% endfor %}
     &lt;/ul>
   {% endif %}
-            </code></pre>
+            </code><span class="codename">flex_theme/templates/menu--main.html.twig</span></pre>
+            <p class="caption">Add logic to twig template (lines 7-12) to check title of current link and alter the styling.</p>
           </section>
-          <section>
-            <img data-src="images/3_twig_3_enable_theme.gif" />
+          <section data-transition="convex">
+            <img data-skip="print" data-src="images/3_twig_3_enable_theme.gif" alt="Enable the new theme and set as default." />
+            <img data-skip="present" data-src="images/3_twig_3_enable_theme.png" alt="Enable the new theme and set as default." />
+            <p class="caption">
+              Enabling the new theme as default so that Drupal will use the custom twig template for output.
+            </p>
           </section>
-          <section data-background-image="images/3_twig_result_highlight.png">
+          <section data-transition="convex" data-skip="print,online" data-background-image="images/3_twig_result.png">
           </section>
-          <section data-background-image="images/3_twig_result_blur.png">
+          <section data-transition="convex" data-skip="live">
+            <img data-src="images/3_twig_result_highlight.png" alt="Menu link altered using a custom template" />
+            <p class="caption">Result of using a custom theme with template to alter "Twig" menu link.</p>
+          </section>
+          <section data-transition="convex" data-skip="print,online" data-background-image="images/3_twig_result_blur.png">
             <div class="fragment fade-in overlay-text" data-fragment-index="1">
               <ul>
-                <li class="fragment" data-fragment-index="1">Almost everything in Drupal is templated</li>
+                <li class="fragment" data-fragment-index="1">Almost everything in Drupal can be altered using a template</li>
                 <li class="fragment">Make changes by altering HTML/Twig</li>
-                <li class="fragment">Requires a custom theme</li>
+                <li class="fragment">Requires little Drupal knowledge (creating a theme)</li>
               </ul>
             </div>
+          </section>
+          <section data-transition="convex" data-skip="live">
+            <h3>Using a template</h3>
+            <ul>
+              <li>Almost everything in Drupal can be altered using a template</li>
+              <li>Make changes by altering HTML/Twig</li>
+              <li>Requires little Drupal knowledge (creating a theme)</li>
+            </ul>
           </section>
         </section>
         <section>
@@ -247,27 +341,30 @@ _core:
               <p class="caption">Ability to target display of specific elements. Requires creating a library in a custom theme or module.</p>
             </div>
           </section>
-          <section>
-            <img data-src="images/4_css_1_files.png" />
+          <section data-transition="convex">
+            <img data-src="images/4_css_1_files.png" alt="Using a custom theme for styling" />
+            <p class="caption">Will add some custom styling to existing custom theme (flex_theme)</p>
           </section>
-          <section>
+          <section data-transition="convex">
             <pre><code class="css line-numbers" data-trim>
 .menu--main .menu li:nth-child(4) a {
     background: #0000FF;
     color: #FFF;
 }
-            </code></pre>
+            </code><span class="codename">themes/flex_theme/css/menu_alter.css </span></pre>
+            <p class="caption">Use custom CSS to target the 4th item in the main menu</p>
           </section>
-          <section>
+          <section data-transition="convex">
             <pre><code class="yml line-numbers" data-trim>
               menu-alter:
   version: VERSION
   css:
     component:
       css/menu_alter.css: {}
-            </code></pre>
+            </code><span class="codename">themes/flex_theme/flex_theme.libraries.yml</span></pre>
+            <p class="caption">Custom CSS and JavaScript need to be added to a custom library. Custom libraries are defined in a *.libraries.yml file.</p>
           </section>
-          <section>
+          <section data-transition="convex">
             <pre><code class="yml line-numbers" data-trim data-highlight-lines="8,9">
               name: Flex Theme
 type: theme
@@ -278,18 +375,31 @@ core: 8.x
 base theme: bartik
 libraries:
    - flex_theme/menu-alter
-            </code></pre>
+            </code><span class="codename">themes/flex_theme/flex_theme.info.yml</span></pre>
+            <p class="caption">Add custom library as a dependency of the theme in the *.info.yml file. Drupal will include this library on any page where this theme is used.</p>
           </section>
-          <section data-background-image="images/4_css_result_highlight.png">
+          <section data-transition="convex" data-skip="print,online" data-background-image="images/4_css_result.png">
           </section>
-          <section data-background-image="images/4_css_result_blur.png">
+          <section data-transition="convex" data-skip="live">
+            <img data-src="images/4_css_result_highlight.png" alt="Altered menu link using custom CSS in a custom library." />
+            <p class="caption">The "CSS" menu link has been altered using custom CSS. Only able to alter the display of menu item.</p>
+          </section>
+          <section data-transition="fade" data-skip="print,online" data-background-image="images/4_css_result_blur.png">
             <div class="fragment fade-in overlay-text" data-fragment-index="1">
               <ul>
                 <li class="fragment" data-fragment-index="1">Target specific page items</li>
-                <li class="fragment">Add using a theme or module</li>
                 <li class="fragment">Can only effect display</li>
+                <li class="fragment">Add using a theme or module.</li>
               </ul>
             </div>
+          </section>
+          <section data-transition="fade" data-skip="live">
+              <h3>Using custom CSS</h3>
+              <ul>
+                <li>Target specific page items</li>
+                <li>Can only effect display</li>
+                <li>Add using a theme or module.</li>
+              </ul>
           </section>
         </section>
         <section>
@@ -299,10 +409,11 @@ libraries:
               <p class="caption">Make changes based on user actions. Requires creating a library with a custom theme or module. Is dependent on user browser.</p>
             </div>
           </section>
-          <section>
+          <section data-transition="convex">
             <img data-src="images/5_javascript_1_files.png" />
+            <p class="caption">Will add new JavaScript and CSS to custom theme to alter data using custom JavaScript.</p>
           </section>
-          <section>
+          <section data-transition="convex">
             <pre><code class="js line-numbers" data-trim data-highlight-lines="6-11">
               (function ($, Drupal) {
   "use strict";
@@ -319,16 +430,18 @@ libraries:
     }
   }
 })(jQuery, Drupal);
-            </code></pre>
+            </code><span class="codename">themes/flex_theme/js/menu_alter_main.js </span></pre>
+            <p class="caption">Write a Drupal Behaviour that will trigger whenever the DOM loads. Target a specific menu item to change value and add a custom class.</p>
           </section>
-          <section>
+          <section data-transition="convex">
             <pre><code class="css line-numbers" data-trim>
               .yellow-menu {
     background: #FFFF00;
 }
-            </code></pre>
+            </code><span class="codename">themes/flex_theme/css/menu_alter_main.css </span></pre>
+            <p class="caption">Add some basic CSS for to a custom class name.</p>
           </section>
-          <section>
+          <section data-transition="convex">
             <pre><code class="yml line-numbers" data-trim data-highlight-lines="6-16">
               menu-alter:
   version: VERSION
@@ -346,9 +459,10 @@ menu-alter-main:
     - core/jquery
     - core/jquery.once
     - core/drupal
-            </code></pre>
+            </code><span class="codename">themes/flex_theme/flex_theme.libraries.yml </span></pre>
+            <p class="caption">Add a second library to libraries.yml file. A Liibrary can define both CSS and JS files to include, as well as, any dependencies on other libraries.</p>
           </section>
-          <section>
+          <section data-transition="convex">
             <pre><code class="twig line-numbers" data-trim data-highlight-lines="1">
 {{ attach_library('flex_theme/menu-alter-main') }}
 {# ... #}
@@ -364,18 +478,31 @@ menu-alter-main:
           {{ link(item.title, item.url) }}
         {% endif %}
         {# ... #}
-            </code></pre>
+            </code><span class="codename">themes/flex_theme/templates/menu--main.html.twig </span></pre>
+            <p class="caption">Libraries can be attached from within a template files, by using the twig function 'attach_library'. Attaching new library only when the template menu--main.html.twig is included on page.</p>
           </section>
-          <section data-background-image="images/5_javascript_result_highlight.png" >
+          <section data-transition="convex" data-skip="print,online" data-background-image="images/5_javascript_result.png" >
           </section>
-          <section data-background-image="images/5_javascript_result_blur.png" >
+          <section data-transition="convex" data-skip="live">
+           <img data-src="images/5_javascript_result_highlight.png" alt="Result of using custom JavaScrupt to alter menu item.">
+           <p class="caption">The "JavaScript" menu item is altered after custom JavaScript triggers, changing values and assigning a new class name for syling.</p>
+          </section>
+          <section data-transition="fade" data-skip="print,online" data-background-image="images/5_javascript_result_blur.png" >
             <div class="fragment fade-in overlay-text" data-fragment-index="1">
               <ul>
                 <li class="fragment" data-fragment-index="1">Can make changes based on actions</li>
-                <li class="fragment">Control inclusion with a library</li>
+                <li class="fragment">Control inclusion with a library (Custom theme or Module)</li>
                 <li class="fragment">Browser dependent</li>
               </ul>
             </div>
+          </section>
+          <section data-transition="fade" data-skip="live">
+              <h3>Using custom JavaScript</h3>
+              <ul>
+                <li>Can make changes based on actions</li>
+                <li>Control inclusion with a library (Custom theme or Module)</li>
+                <li>Browser dependent</li>
+              </ul>
           </section>
         </section>
         <section>
@@ -385,10 +512,11 @@ menu-alter-main:
               <p class="caption">Change data to/from the server. Requires knowledge of Drupal process, php and a custom theme or module.</p>
             </div>
           </section>
-          <section>
-            <img data-src="images/6_hooks_1_inspect.png" />
+          <section data-transition="convex">
+            <img data-src="images/6_hooks_1_inspect.png" alt="Using Twig debug to learn which hooks affect the menu" />
+            <p class="caption">Can use Twig debug to learn naming convention for hooks</p>
           </section>
-          <section>
+          <section data-transition="convex">
             <pre><code class="html line-numbers" data-trim data-highlight-lines="2">
               &lt;!-- THEME DEBUG -->
 <!-- THEME HOOK: 'menu__main' -->
@@ -403,11 +531,13 @@ menu-alter-main:
 </ul>
 &lt;!-- END OUTPUT from 'themes/flex_theme/templates/menu--main.html.twig'
             </code></pre>
+            <p class="caption">Twig debug information informs that theme hooks should contain 'menu__main' (line 2)</p>
           </section>
-          <section>
-            <img data-src="images/6_hooks_2_files.png" />
+          <section data-transition="convex">
+            <img data-src="images/6_hooks_2_files.png" alt="Create a custom module to implement hooks." />
+            <p class="caption">Will create a custom module (flex_module) to implement hooks.</p>
           </section>
-          <section>
+          <section data-transition="convex">
             <pre><code class="php line-numbers" data-trim data-highlight-lines="6-15">
               // Implements hook_preprocess_HOOK().
 function flex_module_preprocess_menu__main(&$variables) {
@@ -426,21 +556,36 @@ function flex_module_preprocess_menu__main(&$variables) {
     }
   }
 }
-            </code></pre>
+            </code><span class="codename">module/custom/flex_module/flex_module.module </pre>
+            <p class="caption">Implement a preprocess hook targeted at the main menu. Loop through all the menu items and alter any that point to node/6</p>
           </section>
-          <section>
-            <img data-src="images/6_hooks_3_enable.gif" />
+          <section data-transition="convex">
+            <img data-skip="print" data-src="images/6_hooks_3_drush.gif" alt="enable custom module using Drush" />
+            <img data-skip="present" data-src="images/6_hooks_3_drush.png" alt="enable custom module using Drush" />
+            <p class="caption">Can enable modules from command line using Drush.</p>
           </section>
-          <section data-background-image="images/6_hooks_result_highlight.png">
+          <section data-transition="convex" data-skip="print,online" data-background-image="images/6_hooks_result.png">
           </section>
-          <section data-background-image="images/6_hooks_result_blur.png">
+          <section data-transition="convex" data-skip="live">
+            <img data-src="images/6_hooks_result_highlight.png" alt="Result of altering menu item with hooks" />
+            <p class="caption">"Hooks" menu item has been altered by using preprocess hook in a custom module</p>
+          </section>
+          <section data-transition="fade" data-skip="print,online" data-background-image="images/6_hooks_result_blur.png">
             <div class="fragment fade-in overlay-text" data-fragment-index="1">
               <ul>
-                <li class="fragment" data-fragment-index="1">Provided by Drupal core and modules</li>
-                <li class="fragment">Can be invoked by custom theme or module</li>
-                <li class="fragment">Requires PHP skillset</li>
+                <li class="fragment" data-fragment-index="1">Requires PHP skillset</li>
+                <li class="fragment">Requires Custom mdoule or theme</li>
+                <li class="fragment">Many hooks provided by Drupal core and modules</li>
               </ul>
             </div>
+          </section>
+          <section data-transition="convex" data-skip="live">
+            <h3>Using Hooks</h3>
+            <ul>
+              <li>Requires PHP skillset</li>
+              <li>Requires Custom module or Theme</li>
+              <li>Many hooks provided by Drupal core and modules</li>
+            </ul>
           </section>
         </section>
         <section>
@@ -450,10 +595,11 @@ function flex_module_preprocess_menu__main(&$variables) {
               <p class="caption">Ability to replace core systems, without hacking core. Requires a custom module, Object Oriented PHP skillset and deep knowledge of Drupal. More long term maintence and security concerns.</p>
             </div>
           </section>
-          <section>
-            <img data-src="images/7_services_1_files.png" />
+          <section data-transition="convex">
+            <img data-src="images/7_services_1_files.png" alt="PHP files adding to custom module." />
+            <p class="caption">Using a custom service requires some PHP classes within a custom module.</p>
           </section>
-          <section>
+          <section data-transition="convex">
             <pre><code class="php line-numbers" data-trim data-highlight-lines="6,10,12,13">
               namespace Drupal\flex_module;
 
@@ -470,9 +616,10 @@ class FlexModuleServiceProvider extends ServiceProviderBase {
     $definition->setClass('Drupal\flex_module\FlexModuleMenuLinkTree');
   }
 }
-            </code></pre>
+            </code><span class="codename">modules/custom/flex_module/src/FlexModuleServiceProvider.php </span></pre>
+            <p class="caption">Need to create a *ServiceProvider class that extends the ServiceProviderBase class (line 6). Will override the 'alter' method (lines 10 -14), and change the PHP class uses for the menu Tree service (lines 12 - 13)</p>
           </section>
-          <section>
+          <section data-transition="convex">
             <pre><code class="php line-numbers" data-trim data-highlight-lines="4,6-11,13-19">
               namespace Drupal\flex_module;
 use Drupal\Core\Menu\MenuLinkTree;
@@ -496,18 +643,31 @@ class FlexModuleMenuLinkTree extends MenuLinkTree {
     return $build;
   }
 }
-            </code></pre>
+            </code><span class="codename">modules/custom/flex_module/src/FlexModuleMenuLinkTree.php </span></pre>
+            <p class="caption">Create a new service class that extends the core MenuLinkTree service (line 4). Will override the core 'build' method, so that can use custom logic to tartget the 8th main menu item.</p>
           </section>
-          <section data-background-image="images/7_services_result_highlight.png" >
+          <section data-transition="convex" data-skip="print,online" data-background-image="images/7_services_result.png" >
           </section>
-          <section data-background-image="images/7_services_result_blur.png" >
+          <section data-transition="convex" data-skip="live">
+            <img data-src="images/7_services_result_highlight.png" alt="Result of using a custom service" />
+            <p class="caption">Drupal now uses custom menu link tree service to render menu links. Custom logic thus casues the "Services" menu tab to be altered.</p>
+          </section>
+          <section data-transition="fade" data-skip="print,online" data-background-image="images/7_services_result_blur.png" >
             <div class="fragment fade-in overlay-text" data-fragment-index="1">
               <ul>
-                <li class="fragment" data-fragment-index="1">Ability to control core systems</li>
+                <li class="fragment" data-fragment-index="1">Ability to override core systems</li>
                 <li class="fragment">Require custom module</li>
                 <li class="fragment">Require advance OOP PHP skillset</li>
               </ul>
             </div>
+          </section>
+          <section data-transition="fade" data-skip="live" >
+            <h3>Using custom Service</h3>
+            <ul>
+              <li>Ability to override core systems</li>
+              <li>Require custom module</li>
+              <li>Require advance OOP PHP skillset</li>
+            </ul>
           </section>
         </section>
         <section>
@@ -517,7 +677,7 @@ class FlexModuleMenuLinkTree extends MenuLinkTree {
               <p class="caption">Real world scenario, a combination of multiple methods. Requires multiple skillsets, but provides most control over Drupal.</p>
             </div>
           </section>
-          <section>
+          <section data-transition="convex">
             <pre><code class="php line-numbers" data-trim data-highlight-lines="12-14">
               namespace Drupal\flex_module;
 use Drupal\Core\Menu\MenuLinkTree;
@@ -538,9 +698,10 @@ class FlexModuleMenuLinkTree extends MenuLinkTree {
     return $build;
   }
 }
-            </code></pre>
+            </code><span class="codename">modules/custom/flex_module/src/FlexModuleMenuLinkTree.php </span></pre>
+            <p class="caption">Use custom service to alter the Display title of a menu link (lines 12 - 14)</p>
           </section>
-          <section>
+          <section data-transition="convex">
             <pre><code class="php line-numbers" data-trim data-highlight-lines="3,4,11">
               // Implements hook_preprocess_HOOK().
 function flex_module_preprocess_menu__main(&$variables) {
@@ -555,9 +716,10 @@ function flex_module_preprocess_menu__main(&$variables) {
     $menu_tab['is_combo'] = ($m++ == $size);
   }
 }
-            </code></pre>
+            </code><span class="codename">modules/custom/flex_module/flex_module.module </span></pre>
+            <p class="caption">Use a preprocess hook in a custom module to target items in main menu. Will add new menu item boolean attribute to check if last item (line #11).</p>
           </section>
-          <section>
+          <section data-transition="convex">
             <pre><code class="js line-numbers" data-trim data-highlight-lines="7-9  ">
               (function ($, Drupal) {
   "use strict";
@@ -572,9 +734,10 @@ function flex_module_preprocess_menu__main(&$variables) {
     }
   }
 })(jQuery, Drupal);
-            </code></pre>
+            </code><span class="codename">themes/flex_theme/js/menu_alter_main.js </span></pre>
+            <p class="caption">Will use custom JavaScript that is part of a custom library to add the class 'combo-item' to any main menu link that has the data-attribute "combo"</p>
           </section>
-          <section>
+          <section data-transition="convex">
             <pre><code class="css line-numbers" data-trim>
               .menu--main .menu li a.combo-item {
     color: #000;
@@ -598,9 +761,10 @@ function flex_module_preprocess_menu__main(&$variables) {
     color-stop(80%, rgba(255, 0, 255, 1)),
     color-stop(100%, rgba(255, 0, 0, 1)));
 }
-            </code></pre>
+            </code><span class="codename">themes/flex_theme/css/menu_alter.css </span></pre>
+            <p class="caption">Write a CSS rule to change background color of any menu item with the class 'combo-item'</p>
           </section>
-          <section>
+          <section data-transition="convex">
             <pre><code class="twig line-numbers" data-trim data-highlight-lines="8-12">
                &lt;ul class="menu">
 {% endif %}
@@ -618,9 +782,10 @@ function flex_module_preprocess_menu__main(&$variables) {
   &lt/li>
 {% endfor %}
 &lt;/ul>
-            </code></pre>
+            </code><span class="codename">theme/flex_theme/tempplates/menu--main.html.twig </span></pre>
+            <p class="caption">Will use a custom templte to build main menu. Will check to see if menu item has attribute 'is_combo' and if so, will reverse the menu text.</p>
           </section>
-          <section>
+          <section data-transition="convex">
             <pre><code class="twig line-numbers" data-trim data-highlight-lines="14-19">
               attributes:
   class:
@@ -644,20 +809,35 @@ function flex_module_preprocess_menu__main(&$variables) {
 _core:
   default_config_hash: 9nRDOclwSlz2Os9mJXM1LXNbV2q-bADV0zipiWPXymk
             </code></pre>
+            <p class="caption">Will update the configuration of Menu Link Attributes module, to include a custom 'data-combo' attribute (lines 14-19).</p>
           </section>
-          <section>
-            <img data-src="images/8_combo_1_attribute.gif" />
+          <section data-transition="convex">
+            <img data-skip="print,online" data-src="images/8_combo_1_attribute.gif" />
+            <img data-skip="live" data-src="images/8_combo_1_attribute.gif" />
+            <p class="caption">Will use Drupal core to edit menu item and set custom attribute 'data-combo' to 'Yes'</p>
           </section>
-          <section data-background-image="images/8_combo_result_highlight.png">
+          <section data-transition="convex" data-skip="print,online" data-background-image="images/8_combo_result_highlight.png">
           </section>
-          <section data-background-image="images/8_combo_result_blur.png">
+          <section  data-transition="convex"data-skip="live">
+            <img data-src="images/8_combo_result_highlight.png" alt="Results of using mix of methods" />
+            <p class="caption">Result of using multiple manipulations methods, the last menu item is greatly altered.</p>
+          </section>
+          <section data-transition="fade" data-skip="print,online" data-background-image="images/8_combo_result_blur.png">
             <div class="fragment fade-in overlay-text" data-fragment-index="1">
               <ul>
                 <li class="fragment" data-fragment-index="1">Real world scenario</li>
                 <li class="fragment">Ultimate control over Drupal</li>
-                <li class="fragment">Utilize available skillsets</li>
+                <li class="fragment">Utilize your available skillsets</li>
               </ul>
             </div>
+          </section>
+          <section data-transition="fade" data-skip="live">
+              <h3>Using multiple methods</h3>
+              <ul>
+                <li>Real world scenario</li>
+                <li>Ultimate control over Drupal</li>
+                <li>Utilize your available skillsets</li>
+              </ul>
           </section>
         </section>
         <section>
@@ -690,10 +870,10 @@ _core:
         </span>
         <span class="footer-company">
           <img src="images/company_logo.png" class="footer-logo company-logo" />
-          Genuine
+          @WeAreGenuine
         </span>
         <span class="footer-info">
-          Drupal Flex / Mike Miles
+          Drupal Flex / @mikemiles86
         </span>
       </div>
     </div>
