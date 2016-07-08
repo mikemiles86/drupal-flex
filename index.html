@@ -31,7 +31,7 @@
 	</head>
 	<body>
 		<div class="reveal">
-			<div class="slides" data-skip-types="online">
+			<div class="slides" data-skip-types="live" data-captions-aside>
         <!-- Title & About //-->
 				<section>
           <section>
@@ -55,20 +55,18 @@
         <!-- Body //-->
         <section>
           <section data-background-image="images/taffy_pull.gif">
-            <h2 class="overlay-text">What is Flexibility?</h2>
+            <h2 class="overlay-text">Flexiblity</h2>
             <aside class="notes">
               <ul>
                 <li>Ambiguous term.</li>
                 <li>In engineering many deffs.</li>
-                <li>Jim Browne, 1984 @ U of M</li>
-                <li>TYPES OF FLEXIBILITIES AND CLASSIFICATION OF
-FLEXIBLE MANUFACTURING SYSTEMS</li>
-                <li>8 sub types</li>
               </ul>
             </aside>
           </section>
           <section data-transition="convex">
-            <blockquote>
+            <p>TYPES OF FLEXIBILITIES AND CLASSIFICATION OF
+FLEXIBLE MANUFACTURING SYSTEMS</p>
+            <blockquote class="fragment">
               "Expansion Flexibility - The capability of building a system, and expanding it as needed,
 easily and modularly."
 <br />
@@ -76,22 +74,32 @@ easily and modularly."
             </blockquote>
             <aside class="notes">
               <ul>
+                <li>Jim Browne, 1984 @ U of M</li>
+                <li>8 sub types</li>
                 <li>This describes Drupal</li>
               </ul>
             </aside>
           </section>
-          <section>
+          <section data-transition="convex">
             <h3>What makes Drupal Flexible?</h3>
             <ul>
-              <li class="fragment">Decoupled nature</li>
               <li class="fragment">Modular design</li>
-              <li class="fragment">Open source</li>
+              <li class="fragment">Decoupled systems</li>
+              <li class="fragment">Open Source nature</li>
             </ul>
             <aside class="notes">
               <li>Seperation between layers and systems</li>
               <li>Swappable, pluggable componsnets to alter Drupal</li>
               <li>Extendable and customizable</li>
             </aside>
+          </section>
+          <section data-transition="convex">
+            <h3>Why Flexiblity is Important</h3>
+            <ul>
+              <li class="fragment">Make Drupal do what you want</li>
+              <li class="fragment">No "right way", just a "right for me" way</li>
+              <li class="fragment">Adjust for skillsets, time and budget</li>
+            </ul>
           </section>
           <section data-transition="convex">
             <h3>Three Areas of Manipulation</h3>
@@ -102,20 +110,27 @@ easily and modularly."
             </ul>
           </section>
           <section data-transition="convex">
-            <h3>Why this is important</h3>
+            <h3>Focus of this Session</h3>
             <ul>
-              <li class="fragment">Can make Drupal do what you want</li>
-              <li class="fragment">No "right way", just the "right for me" way</li>
-              <li class="fragment">Adjust for skillsets, time and budget</li>
+              <li class="fragment">To prove the flexiblity of Drupal</li>
+              <li class="fragment">To demostrate abilities of all skillsets</li>
+              <li class="fragment">To discuss considerations and limitations</li>
             </ul>
           </section>
         </section>
         <section>
           <section>
-            <h2>The Demo</h2>
+            <h2>The Demo Environment</h2>
             <ul>
               <li>Drupal 8.1.3</li>
               <li>Standard Install Profile</li>
+            </ul>
+          </section>
+          <section data-transition="convex">
+            <h3>Focus of Demo</h3>
+            <ul>
+              <li class="fragment">8 methods of manipulation</li>
+              <li class="fragment">Change the value and display of the Main Menu</li>
             </ul>
           </section>
           <section data-transition="convex" data-skip="print,online" data-background-image="images/before.png" data-background-position="top left">
@@ -138,9 +153,23 @@ easily and modularly."
         <section>
           <section data-transition="convex" data-background-image="images/buttons-to-push.jpg" data-credit="http://www.publicdomainpictures.net/view-image.php?image=91272&picture=buttons-to-push">
             <div class="overlay-text">
-              <h3>#1 Drupal Core</h3>
-              <p class="caption">Using only core generally requires less technical/Drupal knowledge. But flexiblity is limited in capabilities. The "push buttons" method.</p>
+              <h2>#1 Drupal Core</h2>
             </div>
+          </section>
+          <section data-transition="convex">
+            <h3>The "Clicking Buttons" method</h3>
+            <ul>
+              <li class="fragment">"Easy" and "Quick"</li>
+              <li class="fragment">Little to No dev skills needed</li>
+              <li class="fragment">Capabilities are limited</li>
+            </ul>
+            <aside class="notes">
+              <ul>
+                <li>Easy after learning Drupal</li>
+                <li>Anyone can use UI</li>
+                <li>Time to do dev? have dev?</li>
+              </ul>
+            </aside>
           </section>
           <section data-transition="convex">
             <img data-skip="print" data-src="images/1_core.gif" alt="Using Drupal core to edit a main menu link" />
@@ -153,31 +182,29 @@ easily and modularly."
             <img data-src="images/1_core_result_highlight.png" alt="The first menu link has been altered using only Drupal core" />
             <p class="caption">The first menu link has been altered using only Drupal core.</p>
           </section>
-          <section data-transition="convex" data-skip="print,online" data-background-image="images/1_core_result_blur.png">
-            <div data-fragment-index="1" class="fragment fade-in overlay-text">
-            <ul>
-              <li class="fragment" data-fragment-index="1">Requires little techincal knowledge.</li>
-              <li class="fragment">Allows for "quick" changes.</li>
-              <li class="fragment">Very limited changes.</li>
-            </ul>
-          </div>
-          </section>
-          <section data-transition="convex" data-skip="live">
-            <h3>Using Drupal core</h3>
-            <ul>
-              <li>Requires little techincal knowledge.</li>
-              <li>Allows for "quick" changes.</li>
-              <li>Very limited changes.</li>
-            </ul>
-          </section>
         </section>
         <section>
           <section data-transition="convex" data-background-image="images/floppy-disks.jpg" data-credit="http://www.publicdomainpictures.net/view-image.php?image=14549&picture=floppy-disks">
             <div class="overlay-text">
-              <h3>#2 Modules</h3>
-              <p class="caption">Extends Drupal core and there are plenty of contrib modules available. If you can't find one, build one (if you have the skillset to do so).</p>
+              <h2>#2 Modules</h2>
             </div>
           </section>
+          <section data-transition="convex">
+            <h3>The extend core method</h3>
+            <ul>
+              <li class="fragment">Requires time for research.</li>
+              <li class="fragment">Can't find one? Build your own (Dev skills needed)</li>
+              <li class="fragment">Requires long term maintence</li>
+            </ul>
+            <aside class="notes">
+              <ul>
+                <li>Community modules available.</li>
+                <li>Open source, build your own. READ.</li>
+                <li>Maintain security</li>
+              </ul>
+            </aside>
+          </section>
+
           <section data-transition="convex">
             <img data-src="images/2_modules_1_module.png" alt="Look on drupal.org for modules that meet your needs" />
             <p class="caption">Look for modules on Drupal.org to see if there is one that meets your needs. Found the Menu Links Attributes module for Drupal 8.</p>
@@ -228,30 +255,27 @@ _core:
             <img data-src="images/2_modules_result_highlight.png" alt="Main menu link altered using a module." />
             <p class="caption">Using a contrib module allowed for altering the style of the "Modules" main menu link.</p>
           </section>
-          <section data-skip="print,online" data-transition="fade" data-background-image="images/2_modules_result_blur.png">
-            <div class="fragment fade-in overlay-text" data-fragment-index="1">
-              <ul>
-                <li class="fragment" data-fragment-index="1">Extended Core abilities</li>
-                <li class="fragment">Required some technical knowledge</li>
-                <li class="fragment">Limited based on what module offers</li>
-              </ul>
-            </div>
-          </section>
-          <section data-skip="live" data-transition="convex">
-            <h3>Using a contrib module</h3>
-            <ul>
-              <li class="fragment">Extended core abilities</li>
-              <li class="fragment">Required some technical knowledge</li>
-              <li class="fragment">Limited based on what module offers</li>
-            </ul>
-          </section>
         </section>
         <section>
           <section data-background-image="images/grass.jpg" data-credit="https://pixabay.com/en/grass-green-nature-plant-meadow-534873/">
             <div class="overlay-text">
-              <h3>#3 Twig</h3>
-              <p class="caption">Almost everything in Drupal is templated and HTML can be altered. Requires the use of a custom theme.</p>
+              <h2>#3 Twig Templates</h2>
             </div>
+          </section>
+          <section data-transition="convex">
+            <h3>The alter markip method</h3>
+            <ul>
+              <li class="fragment">Almost everything is templated</li>
+              <li class="fragment">Only need to know HTML and/or Twig</li>
+              <li class="fragment">Requires a custom theme</li>
+            </ul>
+            <aside class="notes">
+              <ul>
+                <li>All data presented to user.</li>
+                <li>Minimum dev to change HTML or Twig markup</li>
+                <li>Need a custom theme?</li>
+              </ul>
+            </aside>
           </section>
           <section data-transition="convex">
             <img data-src="images/3_twig_1_inspect.png" alt="Use debug tools to learn which templates to alter." />
@@ -316,30 +340,27 @@ _core:
             <img data-src="images/3_twig_result_highlight.png" alt="Menu link altered using a custom template" />
             <p class="caption">Result of using a custom theme with template to alter "Twig" menu link.</p>
           </section>
-          <section data-transition="convex" data-skip="print,online" data-background-image="images/3_twig_result_blur.png">
-            <div class="fragment fade-in overlay-text" data-fragment-index="1">
-              <ul>
-                <li class="fragment" data-fragment-index="1">Almost everything in Drupal can be altered using a template</li>
-                <li class="fragment">Make changes by altering HTML/Twig</li>
-                <li class="fragment">Requires little Drupal knowledge (creating a theme)</li>
-              </ul>
-            </div>
-          </section>
-          <section data-transition="convex" data-skip="live">
-            <h3>Using a template</h3>
-            <ul>
-              <li>Almost everything in Drupal can be altered using a template</li>
-              <li>Make changes by altering HTML/Twig</li>
-              <li>Requires little Drupal knowledge (creating a theme)</li>
-            </ul>
-          </section>
         </section>
         <section>
           <section data-background-image="images/crayons.jpg" data-credit="https://pixabay.com/en/crayons-colors-school-drawing-879974/">
             <div class="overlay-text">
-              <h3>#4 CSS</h3>
-              <p class="caption">Ability to target display of specific elements. Requires creating a library in a custom theme or module.</p>
+              <h2>#4 CSS</h2>
             </div>
+          </section>
+          <section data-transition="convex">
+            <h3>The alter display method</h3>
+            <ul>
+              <li class="fragment">Target any page elements</li>
+              <li class="fragment">Need to know CSS and how to add a Library</li>
+              <li class="fragment">Requires custom theme or module</li>
+            </ul>
+            <aside class="notes">
+              <ul>
+                <li>Specific or multiple element alters. Markup changes?</li>
+                <li>Mult. ways add globally or specific</li>
+                <li>Do need theme or module?</li>
+              </ul>
+            </aside>
           </section>
           <section data-transition="convex">
             <img data-src="images/4_css_1_files.png" alt="Using a custom theme for styling" />
@@ -384,30 +405,27 @@ libraries:
             <img data-src="images/4_css_result_highlight.png" alt="Altered menu link using custom CSS in a custom library." />
             <p class="caption">The "CSS" menu link has been altered using custom CSS. Only able to alter the display of menu item.</p>
           </section>
-          <section data-transition="fade" data-skip="print,online" data-background-image="images/4_css_result_blur.png">
-            <div class="fragment fade-in overlay-text" data-fragment-index="1">
-              <ul>
-                <li class="fragment" data-fragment-index="1">Target specific page items</li>
-                <li class="fragment">Can only effect display</li>
-                <li class="fragment">Add using a theme or module.</li>
-              </ul>
-            </div>
-          </section>
-          <section data-transition="fade" data-skip="live">
-              <h3>Using custom CSS</h3>
-              <ul>
-                <li>Target specific page items</li>
-                <li>Can only effect display</li>
-                <li>Add using a theme or module.</li>
-              </ul>
-          </section>
         </section>
         <section>
           <section data-background-image="images/clapperboard.jpg" data-credit="modified;https://en.wikipedia.org/wiki/Clapperboard#/media/File:Clapperboard,_O2_film,_September_2008.jpg">
             <div class="overlay-text">
-              <h3>#5 JavaScript</h3>
-              <p class="caption">Make changes based on user actions. Requires creating a library with a custom theme or module. Is dependent on user browser.</p>
+              <h2>#5 JavaScript</h2>
             </div>
+          </section>
+          <section data-transition="convex">
+            <h3>The DOM manipulation method</h3>
+            <ul>
+              <li class="fragment">Change based on actions</li>
+              <li class="fragment">Need to know JavaScript and how to add a library</li>
+              <li class="fragment">Dependent on client browser</li>
+            </ul>
+            <aside class="notes">
+              <ul>
+                <li>user actions, items on page.</li>
+                <li>add via css. theme or module.</li>
+                <li>if/when executed dependent on client.</li>
+              </ul>
+            </aside>
           </section>
           <section data-transition="convex">
             <img data-src="images/5_javascript_1_files.png" />
@@ -487,30 +505,27 @@ menu-alter-main:
            <img data-src="images/5_javascript_result_highlight.png" alt="Result of using custom JavaScrupt to alter menu item.">
            <p class="caption">The "JavaScript" menu item is altered after custom JavaScript triggers, changing values and assigning a new class name for syling.</p>
           </section>
-          <section data-transition="fade" data-skip="print,online" data-background-image="images/5_javascript_result_blur.png" >
-            <div class="fragment fade-in overlay-text" data-fragment-index="1">
-              <ul>
-                <li class="fragment" data-fragment-index="1">Can make changes based on actions</li>
-                <li class="fragment">Control inclusion with a library (Custom theme or Module)</li>
-                <li class="fragment">Browser dependent</li>
-              </ul>
-            </div>
-          </section>
-          <section data-transition="fade" data-skip="live">
-              <h3>Using custom JavaScript</h3>
-              <ul>
-                <li>Can make changes based on actions</li>
-                <li>Control inclusion with a library (Custom theme or Module)</li>
-                <li>Browser dependent</li>
-              </ul>
-          </section>
         </section>
         <section>
           <section data-background-image="images/hook.png" data-credit="https://commons.wikimedia.org/wiki/File:Captain_Hook.PNG">
             <div class="overlay-text">
-              <h3>#6 Hooks</h3>
-              <p class="caption">Change data to/from the server. Requires knowledge of Drupal process, php and a custom theme or module.</p>
+              <h2>#6 Hooks</h2>
             </div>
+          </section>
+          <section data-transition="convex">
+            <h3>The alter data method</h3>
+            <ul>
+              <li class="fragment">Provided by core and modules</li>
+              <li class="fragment">Requires PHP and Drupal skillset</li>
+              <li class="fragment">Requires custom theme or module</li>
+            </ul>
+            <aside class="notes">
+              <ul>
+                <li>Provided by core and modules.</li>
+                <li>Special PHP functions. Interact with processes.</li>
+                <li>require theme/module and PHP.</li>
+              </ul>
+            </asidE>
           </section>
           <section data-transition="convex">
             <img data-src="images/6_hooks_1_inspect.png" alt="Using Twig debug to learn which hooks affect the menu" />
@@ -570,30 +585,27 @@ function flex_module_preprocess_menu__main(&$variables) {
             <img data-src="images/6_hooks_result_highlight.png" alt="Result of altering menu item with hooks" />
             <p class="caption">"Hooks" menu item has been altered by using preprocess hook in a custom module</p>
           </section>
-          <section data-transition="fade" data-skip="print,online" data-background-image="images/6_hooks_result_blur.png">
-            <div class="fragment fade-in overlay-text" data-fragment-index="1">
-              <ul>
-                <li class="fragment" data-fragment-index="1">Requires PHP skillset</li>
-                <li class="fragment">Requires Custom mdoule or theme</li>
-                <li class="fragment">Many hooks provided by Drupal core and modules</li>
-              </ul>
-            </div>
-          </section>
-          <section data-transition="convex" data-skip="live">
-            <h3>Using Hooks</h3>
-            <ul>
-              <li>Requires PHP skillset</li>
-              <li>Requires Custom module or Theme</li>
-              <li>Many hooks provided by Drupal core and modules</li>
-            </ul>
-          </section>
         </section>
         <section>
           <section data-background-image="images/racecar.gif" data-credit="http://cheezburger.com/8361556992">
             <div class="overlay-text">
-              <h3>#7 Services</h3>
-              <p class="caption">Ability to replace core systems, without hacking core. Requires a custom module, Object Oriented PHP skillset and deep knowledge of Drupal. More long term maintence and security concerns.</p>
+              <h2>#7 Services</h2>
             </div>
+          </section>
+          <section data-transition="convex">
+            <h3>The replace core method</h3>
+            <ul>
+              <li class="fragment">Replace/Alter global systems</li>
+              <li class="fragment">Requires advanced Drupal and OOP skillset</li>
+              <li class="fragment">Requires a custom module</li>
+            </ul>
+            <aside class="notes">
+              <ul>
+                <li>PHP objects for global functionality.</li>
+                <li>Can override and replace services. Old core hacks.</li>
+                <li>Complex global changes. Can create New.</li>
+              </ul>
+            </aside>
           </section>
           <section data-transition="convex">
             <img data-src="images/7_services_1_files.png" alt="PHP files adding to custom module." />
@@ -652,30 +664,27 @@ class FlexModuleMenuLinkTree extends MenuLinkTree {
             <img data-src="images/7_services_result_highlight.png" alt="Result of using a custom service" />
             <p class="caption">Drupal now uses custom menu link tree service to render menu links. Custom logic thus casues the "Services" menu tab to be altered.</p>
           </section>
-          <section data-transition="fade" data-skip="print,online" data-background-image="images/7_services_result_blur.png" >
-            <div class="fragment fade-in overlay-text" data-fragment-index="1">
-              <ul>
-                <li class="fragment" data-fragment-index="1">Ability to override core systems</li>
-                <li class="fragment">Require custom module</li>
-                <li class="fragment">Require advance OOP PHP skillset</li>
-              </ul>
-            </div>
-          </section>
-          <section data-transition="fade" data-skip="live" >
-            <h3>Using custom Service</h3>
-            <ul>
-              <li>Ability to override core systems</li>
-              <li>Require custom module</li>
-              <li>Require advance OOP PHP skillset</li>
-            </ul>
-          </section>
         </section>
         <section>
           <section data-background-image="images/planet.gif" data-credit="http://gifsoup.com/view/4515088/captain-planet-powers-combined.html" data-background-position="middle">
             <div class="overlay-text">
-              <h3>#8 Combinations</h3>
-              <p class="caption">Real world scenario, a combination of multiple methods. Requires multiple skillsets, but provides most control over Drupal.</p>
+              <h2>#8 Combinations</h2>
             </div>
+          </section>
+          <section data-transition="convex">
+            <h3>The real world method</h3>
+            <ul>
+              <li class="fragment">Real world scenario</li>
+              <li class="fragment">Use multiple skillsets on multiple levels</li>
+              <li class="fragment">Most control over Drupal</li>
+            </ul>
+            <aside class="notes">
+              <ul>
+                <li>Most realistic.</li>
+                <li>Combine based on team/skills.</li>
+                <li>More control = more complex. Moving parts.</li>
+              </ul>
+            </aside>
           </section>
           <section data-transition="convex">
             <pre><code class="php line-numbers" data-trim data-highlight-lines="12-14">
@@ -822,40 +831,29 @@ _core:
             <img data-src="images/8_combo_result_highlight.png" alt="Results of using mix of methods" />
             <p class="caption">Result of using multiple manipulations methods, the last menu item is greatly altered.</p>
           </section>
-          <section data-transition="fade" data-skip="print,online" data-background-image="images/8_combo_result_blur.png">
-            <div class="fragment fade-in overlay-text" data-fragment-index="1">
-              <ul>
-                <li class="fragment" data-fragment-index="1">Real world scenario</li>
-                <li class="fragment">Ultimate control over Drupal</li>
-                <li class="fragment">Utilize your available skillsets</li>
-              </ul>
-            </div>
-          </section>
-          <section data-transition="fade" data-skip="live">
-              <h3>Using multiple methods</h3>
-              <ul>
-                <li>Real world scenario</li>
-                <li>Ultimate control over Drupal</li>
-                <li>Utilize your available skillsets</li>
-              </ul>
-          </section>
         </section>
         <section>
           <section>
             <h2>What did we Learn?</h2>
-            <p class="fragment">Drupal is flexible!</p>
+            <ul>
+              <li class="fragment">Drupal is flexible!</li>
+              <li class="fragment">No "right" way, just "right for me" way</li>
+            </ul>
           </section>
         </section>
         <!-- Resources, Feedback & Thanks //-->
         <section>
           <section>
             <h2>Resources</h2>
-            <p>My Blog: <a href="//mike-miles.com" target="_blank" alt="Mike Miles Blog">mike-miles.com</a></p>
+            <a href="//bit.ly/NYC16Flex" target="_blank">bit.ly/NYC16Flex</a>
+            <a href="//bit.ly/NYC16FlexSlides" target="_blank">bit.ly/NYC16FlexSlides</a>
+            <a href="//bit.ly/NYC16FlexCode" target="_blank">bit.ly/NYC16FlexCode</a>
+            <a href="//mike-miles.com" target="_blank" alt="Mike Miles Blog">mike-miles.com</a>
           </section>
           <section data-transition="convex">
             <h1>Feedback</h1>
             <h3><a href="http://www.twitter.com/mikemiles86">@mikemiles86</a></h3>
-            <h3 data-set-aside data-skip-print>[Conference Tag]</h3>
+            <h3 data-set-aside data-skip-print>#NYCCamp</h3>
           </section>
         </section>
         <section>
