@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function flex_module_preprocess_menu__main(&$variables) {
+  // Loop through all menu tabs.
+  $size = count($variables['items']);
+  $m = 1; // Set a counter as keys are stings.
+  foreach ($variables['items'] as &$menu_tab) {
+    // Current tab pointing to node/6 ?
+    if ($menu_tab['url']->toString() == '/node/6') {
+      // Alter the title
+      $menu_tab['title'] .= ' Alt';
+      // No existing attributes?
+      if (!$attributes = $menu_tab['url']->getOption('attributes')) {
+        // Create empty style attribute.
+        $attributes = array('style' => '');
+      }
+      // No exsting style attribute?
+      elseif (!isset($attributes['style'])) {
+        // Add empty style attribute.
+        $attributes['style'] = '';
+      }
+      // Add custom styling.
+      $attributes['style'] .= 'color:#FFF;background:#F00;';
+      // Add back modified attributes.
+      $menu_tab['url']->setOption('attributes', $attributes);
+    }
+    // Add boolean check if is last item in menu.
+    $menu_tab['is_combo'] = ($m++ == $size);
+  }
+}

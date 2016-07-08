@@ -5,7 +5,7 @@
 
     <title>The Flexibility of Drupal 8</title>
     <meta name="author" content="Mike Miles">
-    <meta name="description" content="The Flexibility of Drupal 8">
+    <meta name="description" content="The Flexibility of Drupal 8: How you can make Drupal 8 do what you want, no matter your skillset.">
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -31,13 +31,13 @@
 	</head>
 	<body>
 		<div class="reveal">
-			<div class="slides" data-skip-types="live" data-captions-aside>
+			<div class="slides" data-skip-types="online" data-remove-aside>
         <!-- Title & About //-->
 				<section>
           <section>
             <h1>The Flexibility of Drupal 8</h1>
-            <p><a href="//www.nyccamp.org/session/flexibility-drupal-8" target="_blank">nyccamp.org/node/1279</a></p>
-            <h3>NYCCamp 2016</h3>
+            <p data-skip="print,online"><a href="//www.nyccamp.org/session/flexibility-drupal-8" target="_blank">nyccamp.org/node/1279</a></p>
+            <h3 data-skip="print,online">NYCCamp 2016</h3>
           </section>
           <section data-transition="convex">
             <h2>Mike Miles</h2>
@@ -63,7 +63,7 @@
               </ul>
             </aside>
           </section>
-          <section data-transition="convex">
+          <section data-transition="convex" data-skip="print">
             <p>TYPES OF FLEXIBILITIES AND CLASSIFICATION OF
 FLEXIBLE MANUFACTURING SYSTEMS</p>
             <blockquote class="fragment">
@@ -81,7 +81,7 @@ easily and modularly."
             </aside>
           </section>
           <section data-transition="convex">
-            <h3>What makes Drupal Flexible?</h3>
+            <h3>What Makes Drupal Flexible</h3>
             <ul>
               <li class="fragment">Modular design</li>
               <li class="fragment">Decoupled systems</li>
@@ -102,11 +102,11 @@ easily and modularly."
             </ul>
           </section>
           <section data-transition="convex">
-            <h3>Three Areas of Manipulation</h3>
+            <h3>Three Areas of Flexibility</h3>
             <ul>
               <li class="fragment">The Interface</li>
               <li class="fragment">Display Layer</li>
-              <li class="fragment">Data/System Layer</li>
+              <li class="fragment">Data Layer</li>
             </ul>
           </section>
           <section data-transition="convex">
@@ -120,17 +120,11 @@ easily and modularly."
         </section>
         <section>
           <section>
-            <h2>The Demo Environment</h2>
+            <h2>The Demo</h2>
             <ul>
               <li>Drupal 8.1.3</li>
               <li>Standard Install Profile</li>
-            </ul>
-          </section>
-          <section data-transition="convex">
-            <h3>Focus of Demo</h3>
-            <ul>
-              <li class="fragment">8 methods of manipulation</li>
-              <li class="fragment">Change the value and display of the Main Menu</li>
+              <li>Change menu tabs using 8 different methods</li>
             </ul>
           </section>
           <section data-transition="convex" data-skip="print,online" data-background-image="images/before.png" data-background-position="top left">
@@ -139,7 +133,7 @@ easily and modularly."
           <section data-transition="convex" data-skip="live">
             <h3>The Before</h3>
             <img data-src="images/before.png" alt="Plain Drupal 8 site before manipulations" />
-            <p class="caption">A plain Drupal 8 install with menu menu links before manipulation.</p>
+            <p class="caption">A plain Drupal 8 install with menu menu links before altering.</p>
           </section>
           <section data-transition="convex" data-skip="print,online" data-background-image="images/after.png" data-background-position="top left">
             <h3 class="overlay-text">The After</h3>
@@ -147,7 +141,7 @@ easily and modularly."
           <section data-transition="convex" data-skip="live">
             <h3>The After</h3>
             <img data-src="images/after.png" alt="Drupal 8 with menu after manipulations." />
-            <p class="caption">Drupal 8 main menu after demostrating manipulation methods.</p>
+            <p class="caption">Drupal 8 main menu after altering 8 different ways.</p>
           </section>
         </section>
         <section>
@@ -193,7 +187,7 @@ easily and modularly."
             <h3>The extend core method</h3>
             <ul>
               <li class="fragment">Requires time for research.</li>
-              <li class="fragment">Can't find one? Build your own (Dev skills needed)</li>
+              <li class="fragment">Can't find one? Can build your own (Dev skills needed)</li>
               <li class="fragment">Requires long term maintence</li>
             </ul>
             <aside class="notes">
@@ -263,10 +257,10 @@ _core:
             </div>
           </section>
           <section data-transition="convex">
-            <h3>The alter markip method</h3>
+            <h3>The alter markup method</h3>
             <ul>
               <li class="fragment">Almost everything is templated</li>
-              <li class="fragment">Only need to know HTML and/or Twig</li>
+              <li class="fragment">Need to know HTML and/or Twig</li>
               <li class="fragment">Requires a custom theme</li>
             </ul>
             <aside class="notes">
@@ -350,9 +344,9 @@ _core:
           <section data-transition="convex">
             <h3>The alter display method</h3>
             <ul>
-              <li class="fragment">Target any page elements</li>
-              <li class="fragment">Need to know CSS and how to add a Library</li>
-              <li class="fragment">Requires custom theme or module</li>
+              <li class="fragment">Target any element on the "page"</li>
+              <li class="fragment">Need to know CSS and how to add a library</li>
+              <li class="fragment">Requires a custom theme or module</li>
             </ul>
             <aside class="notes">
               <ul>
@@ -368,12 +362,12 @@ _core:
           </section>
           <section data-transition="convex">
             <pre><code class="css line-numbers" data-trim>
-.menu--main .menu li:nth-child(4) a {
+.menu--main .menu li:nth-child(5) a {
     background: #0000FF;
     color: #FFF;
 }
             </code><span class="codename">themes/flex_theme/css/menu_alter.css </span></pre>
-            <p class="caption">Use custom CSS to target the 4th item in the main menu</p>
+            <p class="caption">Use custom CSS to target the 5th item in the main menu</p>
           </section>
           <section data-transition="convex">
             <pre><code class="yml line-numbers" data-trim>
@@ -417,7 +411,7 @@ libraries:
             <ul>
               <li class="fragment">Change based on actions</li>
               <li class="fragment">Need to know JavaScript and how to add a library</li>
-              <li class="fragment">Dependent on client browser</li>
+              <li class="fragment">Dependent on client browser, delay in execution</li>
             </ul>
             <aside class="notes">
               <ul>
@@ -674,9 +668,9 @@ class FlexModuleMenuLinkTree extends MenuLinkTree {
           <section data-transition="convex">
             <h3>The real world method</h3>
             <ul>
-              <li class="fragment">Real world scenario</li>
-              <li class="fragment">Use multiple skillsets on multiple levels</li>
               <li class="fragment">Most control over Drupal</li>
+              <li class="fragment">Use multiple skillsets</li>
+              <li class="fragment">Requires more time and effort</li>
             </ul>
             <aside class="notes">
               <ul>
@@ -822,12 +816,12 @@ _core:
           </section>
           <section data-transition="convex">
             <img data-skip="print,online" data-src="images/8_combo_1_attribute.gif" />
-            <img data-skip="live" data-src="images/8_combo_1_attribute.gif" />
+            <img data-skip="live" data-src="images/8_combo_1_attribute.png" />
             <p class="caption">Will use Drupal core to edit menu item and set custom attribute 'data-combo' to 'Yes'</p>
           </section>
-          <section data-transition="convex" data-skip="print,online" data-background-image="images/8_combo_result_highlight.png">
+          <section data-transition="convex" data-skip="print,online" data-background-image="images/8_combo_result.png">
           </section>
-          <section  data-transition="convex"data-skip="live">
+          <section  data-transition="convex" data-skip="live">
             <img data-src="images/8_combo_result_highlight.png" alt="Results of using mix of methods" />
             <p class="caption">Result of using multiple manipulations methods, the last menu item is greatly altered.</p>
           </section>
@@ -846,22 +840,29 @@ _core:
           <section>
             <h2>Resources</h2>
             <a href="//bit.ly/NYC16Flex" target="_blank">bit.ly/NYC16Flex</a>
+            <p class="filename">This presentation</p>
+            <br />
             <a href="//bit.ly/NYC16FlexSlides" target="_blank">bit.ly/NYC16FlexSlides</a>
+            <p class="filename">Annotated Slides</p>
+            <br />
             <a href="//bit.ly/NYC16FlexCode" target="_blank">bit.ly/NYC16FlexCode</a>
+            <p class="filename">Demo code (theme and module)</p>
+            <br />
             <a href="//mike-miles.com" target="_blank" alt="Mike Miles Blog">mike-miles.com</a>
+            <p class="filename">My blog</p>
           </section>
           <section data-transition="convex">
             <h1>Feedback</h1>
             <h3><a href="http://www.twitter.com/mikemiles86">@mikemiles86</a></h3>
-            <h3 data-set-aside data-skip-print>#NYCCamp</h3>
+            <h3 data-set-aside data-skip="print,online">#NYCCamp</h3>
           </section>
         </section>
         <section>
           <h1>Thank You!</h1>
-          <p data-set-aside data-skip-print>Questions?</p>
+          <p data-set-aside data-skip="print,online">Questions?</p>
         </section>
 			</div>
-      <div class="footer">
+      <div class="footer" data-skip="print,online">
         <span class="footer-conference">
           <img src="images/conf_logo.png" class="footer-logo conference-logo" />
           #NYCCamp
@@ -899,6 +900,12 @@ _core:
           { src: 'plugin/gif-reloader/gif-reloader.js', async: false}
 				]
 			});
+
+      Reveal.addEventListener( 'ready', function() {
+        if (window.location.search.match( /print-pdf/gi )) {
+          window.setTimeout(addLineNumbers, 1000);
+        }
+      });
 		</script>
 	</body>
 </html>

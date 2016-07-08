@@ -1,0 +1,16 @@
+menu-alter:
+  version: VERSION
+  css:
+    component:
+      css/menu_alter.css: {}
+menu-alter-main:
+  version: VERSION
+  css:
+    component:
+      css/menu_alter_main.css: {}
+  js:
+    js/menu_alter_main.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal

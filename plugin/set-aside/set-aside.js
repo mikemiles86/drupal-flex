@@ -24,7 +24,7 @@ Reveal.addEventListener('ready', function(event){
 function setAsideSkip(is_print) {
   // Get the array of types to skip.
   skip_types = setAsideGetList(document.getElementsByClassName("slides")[0].getAttribute("data-skip-types"));
-  console.log(skip_types);
+
   if (is_print) {
     skip_types.push('print');
   }
@@ -33,7 +33,6 @@ function setAsideSkip(is_print) {
   }
   // Loop through each type.
   for (var type in skip_types) {
-    console.log(skip_types[type]);
     setAsideFindAndRemove("[data-skip*='" + skip_types[type] + "']");
   }
 }
@@ -71,7 +70,6 @@ function setAsideGetList(list_string) {
 
 function setAsideFindAndRemove(query_pattern) {
   var matches = document.querySelectorAll(query_pattern);
-  console.log(query_pattern + ': ' + matches.length);
   if (matches.length > 0) {
     var m = 0;
     for (m = 0; m < matches.length; m++) {

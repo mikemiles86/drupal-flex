@@ -1,0 +1,5 @@
+name: 'Flex Module'
+type: module
+description: An module to demo the flexibility of Drupal 8.
+package: other
+core: 8.x

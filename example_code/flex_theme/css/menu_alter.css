@@ -1,0 +1,29 @@
+/* Alter link element in 5th list item of main menu */
+.menu--main .menu li:nth-child(5) a {
+    background: #0000FF;
+    color: #FFF;
+}
+
+/* Alter link item in menu menu with the class 'combo-item' */
+.menu--main .menu li a.combo-item {
+    color: #000;
+    font-weight: 800;
+    text-shadow: 0 0 #000 !important;
+    background: red; /* not working, let's see some red */
+    background: -moz-linear-gradient( top ,
+    rgba(255, 0, 0, 1) 0%,
+    rgba(255, 255, 0, 1) 15%,
+    rgba(0, 255, 0, 1) 30%,
+    rgba(0, 255, 255, 1) 50%,
+    rgba(0, 0, 255, 1) 65%,
+    rgba(255, 0, 255, 1) 80%,
+    rgba(255, 0, 0, 1) 100%);
+    background: -webkit-gradient(linear,  left top,  left bottom,
+    color-stop(0%, rgba(255, 0, 0, 1)),
+    color-stop(15%, rgba(255, 255, 0, 1)),
+    color-stop(30%, rgba(0, 255, 0, 1)),
+    color-stop(50%, rgba(0, 255, 255, 1)),
+    color-stop(65%, rgba(0, 0, 255, 1)),
+    color-stop(80%, rgba(255, 0, 255, 1)),
+    color-stop(100%, rgba(255, 0, 0, 1)));
+}
